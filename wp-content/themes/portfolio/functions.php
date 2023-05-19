@@ -5,7 +5,6 @@ add_filter('use_block_editor_for_post', '__return_false', 10);
 
 // Register existing navigation menus
 register_nav_menu('main', 'Navigation principale du site web (en-tête)');
-register_nav_menu('footer', 'Navigation de pied de page');
 register_nav_menu('social-media', 'Liens vers les réseaux sociaux');
 
 function dwp_get_menu(string $location, ?array $attributes = []): array
@@ -38,10 +37,10 @@ function dwp_get_menu(string $location, ?array $attributes = []): array
 
 // Activer les images "thumbnail" sur nos posts
 add_theme_support('post-thumbnails');
-add_image_size('projet_thumbnail', 400, 400, true);
+add_image_size('project_thumbnail', 400, 400, true);
 
 // Enregistrer un custom post type :
-register_post_type('animal', [
+register_post_type('projects', [
         'label' => 'Projets',
         'description' => 'Mes projets',
         'public' => true,
@@ -50,3 +49,15 @@ register_post_type('animal', [
         'supports' => ['title','thumbnail'],
 ]);
 
+function dwp_get_projets($count = 20){
+    //1. on instancie l'objet WP_Query
+    $projects = new WP_Query([
+        //arguments
+        'post_type' => 'project',
+        'orderby' =>'date',
+        'order'=>'ASC',
+        'posts_per_page' => $count,
+    ]);
+    //2. on retourne l'objet WP_Query
+    return $projects;
+}
