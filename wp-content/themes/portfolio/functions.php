@@ -40,13 +40,14 @@ add_theme_support('post-thumbnails');
 add_image_size('project_thumbnail', 400, 400, true);
 
 // Enregistrer un custom post type :
-register_post_type('projects', [
+register_post_type('project', [
         'label' => 'Projets',
         'description' => 'Mes projets',
         'public' => true,
         'menu_position' => 5,
+        'hierarchical' => true,
         'menu_icon' => 'dashicons-art', // https://developer.wordpress.org/resource/dashicons/#pets,
-        'supports' => ['title','thumbnail'],
+        'supports' => ['title','thumbnail', 'page-attributes'],
 ]);
 
 function dwp_get_projets($count = 20){
