@@ -41,5 +41,6 @@
             </figure>
             <p class="presentation__text"><?= get_field('presentation_texte')?></p>
         </section>
+
     </main>
 <?php get_footer(); ?>

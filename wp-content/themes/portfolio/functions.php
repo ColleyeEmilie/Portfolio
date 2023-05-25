@@ -1,6 +1,10 @@
 <?php
 
+if(session_status() === PHP_SESSION_NONE) session_start();
+
 // Disable Wordpress' default Gutenberg Editor:
+require_once(__DIR__ . '/controllers/ContactForm.php');
+
 add_filter('use_block_editor_for_post', '__return_false', 10);
 
 // Register existing navigation menus
@@ -61,4 +65,66 @@ function dwp_get_projets($count = 20){
     ]);
     //2. on retourne l'objet WP_Query
     return $projects;
+}
+
+// Gérer le formulaire de contact "custom"
+// Inspiré de : https://wordpress.stackexchange.com/questions/319043/how-to-handle-a-custom-form-in-wordpress-to-submit-to-another-page
+
+function dwp_execute_contact_form()
+{
+    $config = [
+        'nonce_field' => 'contact_nonce',
+        'nonce_identifier' => 'dwp_contact_form',
+    ];
+
+    (new \Portfolio\ContactForm($config, $_POST))
+        ->sanitize([
+            'firstname' => 'text_field',
+            'lastname' => 'text_field',
+            'email' => 'email',
+            'message' => 'textarea_field',
+        ])
+        ->validate([
+            'firstname' => ['required'],
+            'lastname' => ['required'],
+            'email' => ['required','email'],
+            'message' => [],
+        ])
+        ->save(
+            title: fn($data) => $data['firstname'] . ' ' . $data['lastname'] . ' <' . $data['email'] . '>',
+            content: fn($data) => $data['message'],
+        )
+        ->send(
+            title: fn($data) => 'Nouveau message de ' . $data['firstname'] . ' ' . $data['lastname'],
+            content: fn($data) => 'Prénom: ' . $data['firstname'] . PHP_EOL . 'Nom: ' . $data['lastname'] . PHP_EOL . 'Email: ' . $data['email'] . PHP_EOL . 'Message:' . PHP_EOL . $data['message'],
+        )
+        ->feedback();
+}
+
+add_action('admin_post_nopriv_dwp_contact_form', 'dwp_execute_contact_form');
+add_action('admin_post_dwp_contact_form', 'dwp_execute_contact_form');
+
+// Travailler avec la session de PHP
+function dwp_session_flash(string $key, mixed $value)
+{
+    if(! isset($_SESSION['dwp_flash'])) {
+        $_SESSION['dwp_flash'] = [];
+    }
+
+    $_SESSION['dwp_flash'][$key] = $value;
+}
+
+function dwp_session_get(string $key)
+{
+    if(isset($_SESSION['dwp_flash']) && array_key_exists($key, $_SESSION['dwp_flash'])) {
+        // 1. Récupérer la donnée qui a été flash.
+        $value = $_SESSION['dwp_flash'][$key];
+        // 2. Supprimer la donnée de la session.
+        unset($_SESSION['dwp_flash'][$key]);
+        // 3. Retourner la donnée récupérée.
+        return $value;
+    }
+
+    // La donnée n'existait pas dans la session flash, on retourne null.
+    return null;
 }
