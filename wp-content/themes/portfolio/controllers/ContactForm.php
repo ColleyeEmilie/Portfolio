@@ -4,36 +4,15 @@ namespace Portfolio;
 
 class ContactForm
 {
-    /**
-     * Array containing the form nonce information, etc.
-     */
     protected array $config;
-
-    /**
-     * Array representing the incoming request data.
-     */
     protected array $data;
-
-    /**
-     * The previous page's URL.
-     */
     protected string $referrer;
-
-    /**
-     * Create a new Form controller instance.
-     */
     public function __construct(array $config, array $data)
     {
         $this->config = $config;
         $this->data = $data;
         $this->referrer = wp_get_referer();
     }
-
-    /**
-     * Check if the incoming request is authorized and if the data
-     * is correctly formatted, otherwise, redirect to the previous
-     * URL in order to display the validation errors.
-     */
     public function validate(array $rules): static
     {
         if(! $this->verifyNonce()) {
@@ -105,9 +84,6 @@ class ContactForm
         return 'Veuillez fournir une adresse mail valide.';
     }
 
-    /**
-     * Cleanup the data values.
-     */
     public function sanitize(array $methods): static
     {
         foreach ($methods as $field => $method) {
@@ -117,10 +93,6 @@ class ContactForm
 
         return $this;
     }
-
-    /**
-     * Insert the form data into Wordpress' database.
-     */
     public function save(callable $title, callable $content): static
     {
         wp_insert_post([
@@ -132,10 +104,6 @@ class ContactForm
 
         return $this;
     }
-
-    /**
-     * Send the form data in an email.
-     */
     public function send(callable $title, callable $content): static
     {
         wp_mail(get_bloginfo('admin_email'), $title($this->data), $content($this->data));
@@ -143,10 +111,6 @@ class ContactForm
         return $this;
     }
 
-    /**
-     * Redirect to the previous URL in order to display
-     * a feedback message.
-     */
     public function feedback(): void
     {
         dwp_session_flash($this->config['nonce_identifier'] . '_feedback', true);

@@ -3,6 +3,7 @@
 <?php if (have_posts()): while (have_posts()): the_post(); ?>
 
 <main class="layout__contact">
+
     <section aria-labelledby="contact" class="contact">
         <h2 id="contact" class="contact__title" aria-level="2"><?= get_the_title(); ?></h2>
             <section aria-labelledby="coordinate" class="coordinates" itemscope itemtype="https://schema.org/Person">

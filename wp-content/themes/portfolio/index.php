@@ -1,6 +1,7 @@
 <?php get_header(); ?>
     <main class="page">
         <section class="page__hero hero">
+
             <h2 class="hero__title hidden"><?= get_field('hero_titre')?> </h2>
             <figure class="hero__fig">
                 <img src="<?= get_field('hero_image')?>" alt="" class="hero__img">
