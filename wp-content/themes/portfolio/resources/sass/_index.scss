@@ -1,0 +1,73 @@
+body{
+  font-family: "roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: $color_fontDark;
+}
+.page {
+  .hero__title, .projects__title, .presentation__title{
+    font-family: "tenez", sans-serif;
+  }
+  .hero{
+    &__title{
+      font-size: em(68);
+    }
+    &__presentation{
+      font-size: em(20);
+      color: $color_lightFont;
+    }
+  }
+  .projects{
+    background-color: $color_darkGreen;
+    &__title, &__all{
+      color:white;
+    }
+    &__title{
+      font-size: em(44);
+    }
+    &__all{
+      text-transform: uppercase;
+    }
+    .project{
+      &__link{
+        position: absolute;
+        font-family: "Tenez", sans-serif;
+        padding: 10px;
+        background-color: white;
+        align-self: end;
+        z-index: 20;
+      }
+      &__fig, &__fig::before{
+        max-width: 293px;
+        max-height: 322px;
+      }
+      &__fig{
+        display: flex;
+        justify-content: center;
+      }
+      &__img{
+        width: 293px;
+        height: 322px;
+        object-fit: cover;
+      }
+      &__fig::before{
+        content: '';
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 50%);
+      }
+    }
+  }
+  .presentation{
+    &__title{
+      font-size: em(36);
+      line-height: em(48);
+    }
+    &__text{
+      line-height: em(26);
+    }
+  }
+}
