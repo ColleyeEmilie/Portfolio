@@ -4,6 +4,10 @@ body{
   font-style: normal;
   color: $color_fontDark;
 }
+.hidden{
+  position: absolute;
+  opacity: 0;
+}
 .page {
   .hero__title, .projects__title, .presentation__title{
     font-family: "tenez", sans-serif;
@@ -19,6 +23,11 @@ body{
   }
   .projects{
     background-color: $color_darkGreen;
+    min-height: 65vh;
+    &__regroup{
+      display: flex;
+      justify-content: space-between;
+    }
     &__title, &__all{
       color:white;
     }
@@ -27,21 +36,26 @@ body{
     }
     &__all{
       text-transform: uppercase;
+      align-self: center;
     }
     .project{
       &__link{
         position: absolute;
         font-family: "Tenez", sans-serif;
-        padding: 10px;
+        padding: 15px 70px;
         background-color: white;
         align-self: end;
         z-index: 20;
+        bottom: -25px;
       }
       &__fig, &__fig::before{
         max-width: 293px;
         max-height: 322px;
       }
       &__fig{
+        margin-top: em(70);
+        margin-left: em(70);
+        position: relative;
         display: flex;
         justify-content: center;
       }

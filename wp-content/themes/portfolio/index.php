@@ -39,7 +39,7 @@
         </section>
 
         <section class="page__presentation presentation">
-            <h2 class="presentation__title hidden"><?= get_field('presentation_titre')?> </h2>
+            <h2 class="presentation__title"><?= get_field('presentation_titre')?> </h2>
             <p class="presentation__text"><?= get_field('presentation_texte')?></p>
             <figure class="presentation__fig">
                 <img src="<?= get_field('presentation_image')?>" alt="" class="presentation__img">
