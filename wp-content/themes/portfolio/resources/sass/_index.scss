@@ -38,6 +38,10 @@ body{
       text-transform: uppercase;
       align-self: center;
     }
+    &__articles{
+      display: flex;
+      justify-content: space-around;
+    }
     .project{
       &__link{
         position: absolute;
@@ -54,7 +58,6 @@ body{
       }
       &__fig{
         margin-top: em(70);
-        margin-left: em(70);
         position: relative;
         display: flex;
         justify-content: center;
