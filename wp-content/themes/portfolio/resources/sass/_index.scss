@@ -3,27 +3,64 @@ body{
   font-weight: 400;
   font-style: normal;
   color: $color_fontDark;
+  background-color: white;
 }
 .hidden{
   position: absolute;
   opacity: 0;
 }
+
 .page {
   .hero__title, .projects__title, .presentation__title{
     font-family: "tenez", sans-serif;
   }
-  .hero{
-    &__title{
-      font-size: em(68);
+  .hero {
+    min-height: 110vh;
+    &__content{
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: center;
+      padding-top: em(100);
+      padding-bottom: em(80);
     }
-    &__presentation{
-      font-size: em(20);
+    &__title {
+      font-size: em(58);
+      margin-bottom: em(10);
+    }
+
+    &__presentation {
+      font-size: em(19);
       color: $color_lightFont;
+      line-height: em(25);
+    }
+    &__fig {
+      max-width: 430px;
+      max-height: 530px;
+      margin-left: em(70);
+    }
+    &__img {
+      width: 430px;
+      height: 530px;
+      object-fit: cover;
+    }
+    &__regroup {
+      max-width: 500px;
+      margin-left: em(90);
+      display: flex;
+      align-self: center;
+      flex-direction: column;
+    }
+    &__background{
+      position: absolute;
+      min-height: 120vh;
+      min-width: 37vw;
+      z-index: -1;
+      background-color: $color_lightGreen;
     }
   }
   .projects{
     background-color: $color_darkGreen;
-    min-height: 65vh;
+    min-height: 80vh;
     &__regroup{
       display: flex;
       justify-content: space-between;
@@ -79,12 +116,31 @@ body{
     }
   }
   .presentation{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: left;
     &__title{
       font-size: em(36);
       line-height: em(48);
     }
     &__text{
       line-height: em(26);
+    }
+    &__fig{
+      max-width: 400px;
+      max-height: 430px;
+    }
+    &__img{
+      width: 400px;
+      height: 430px;
+      object-fit: cover;
+    }
+    &__regroup{
+      max-width: 470px;
+      margin-left: em(90);
+      display: flex;
+      align-self: center;
+      flex-direction: column;
     }
   }
 }

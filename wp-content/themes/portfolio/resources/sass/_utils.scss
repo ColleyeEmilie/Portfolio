@@ -4,6 +4,6 @@ $color_darkGreen: #386355;
 $color_lightFont: rgba(47, 60, 69, 0.7);
 $browser-context: 16; // Default
 @function em($pixels, $context: $browser-context) {
-  @return #{$pixels/$context}em;
+  @return #{calc($pixels/$context)}em;
 }
 
