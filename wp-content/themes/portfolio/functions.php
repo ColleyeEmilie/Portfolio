@@ -129,3 +129,18 @@ function dwp_session_get(string $key)
     // La donnée n'existait pas dans la session flash, on retourne null.
     return null;
 }
+
+function portfolio_get_template_page(string $template): int|WP_Post|null
+{
+    $query = new WP_Query([
+        'post_type' => 'page',
+        'post_status' => 'publish',
+        'meta_query' => [
+            [
+                'key' => '_wp_page_template',
+                'value' => $template . '.php',
+            ],
+        ]
+    ]);
+    return $query->posts[0] ?? null;
+}

@@ -1,3 +1,12 @@
 .nav{
   position:absolute;
+  display: flex;
+  min-width: 100vw;
+  justify-content: flex-end;
+  padding-top: em(50);
+  padding-bottom: em(40);
+
+  a{
+    margin-right: em(45);
+  }
 }

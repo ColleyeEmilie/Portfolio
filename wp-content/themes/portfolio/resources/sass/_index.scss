@@ -5,12 +5,27 @@ body{
   color: $color_fontDark;
   background-color: white;
 }
+a:visited, a:hover, a:active, a   {
+  color: $color_fontDark;
+}
+a:hover, a:active  {
+font-weight: bolder;
+}
+a{
+  text-decoration: none;
+}
+
 .hidden{
   position: absolute;
   opacity: 0;
 }
-
+.bold{
+  font-weight: bold;
+}
 .page {
+  a{
+    font-weight: bolder;
+  }
   .hero__title, .projects__title, .presentation__title{
     font-family: "tenez", sans-serif;
   }
@@ -60,27 +75,33 @@ body{
   }
   .projects{
     background-color: $color_darkGreen;
-    min-height: 80vh;
+    min-height: 100vh;
+    padding: 50px 70px 0;
     &__regroup{
       display: flex;
       justify-content: space-between;
+      margin-bottom: 10px;
     }
     &__title, &__all{
       color:white;
     }
     &__title{
-      font-size: em(44);
+      font-size: em(36);
     }
     &__all{
       text-transform: uppercase;
       align-self: center;
+      letter-spacing: .15rem;
     }
     &__articles{
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
     }
     .project{
+
       &__link{
+        width: 100px;
+        text-align: center;
         position: absolute;
         font-family: "Tenez", sans-serif;
         padding: 15px 70px;
@@ -88,6 +109,7 @@ body{
         align-self: end;
         z-index: 20;
         bottom: -25px;
+        font-size: em(20);
       }
       &__fig, &__fig::before{
         max-width: 293px;
@@ -111,17 +133,19 @@ body{
         height: 100%;
         display: block;
         position: absolute;
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 50%);
+        background: linear-gradient(0deg, rgba(8, 28, 21, 1), rgba(8, 28, 21, 0));
       }
     }
   }
   .presentation{
+    min-height: 80vh;
     display: flex;
     flex-direction: row-reverse;
-    justify-content: left;
+    justify-content: center;
     &__title{
       font-size: em(36);
-      line-height: em(48);
+      line-height: em(20);
+      margin-bottom: em(10);
     }
     &__text{
       line-height: em(26);
@@ -136,11 +160,37 @@ body{
       object-fit: cover;
     }
     &__regroup{
-      max-width: 470px;
+      max-width: 440px;
       margin-left: em(90);
       display: flex;
       align-self: center;
       flex-direction: column;
+    }
+  }
+
+  .footer{
+    min-height: 25vh;
+    background-color: $color_darkGreen;
+    padding: 40px 65px;
+    &__regroup{
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 30px;
+      border-bottom: 1px rgba(255, 255, 255, 0.1) solid;
+    }
+    &__title{
+      color:white;
+      margin-bottom: 25px;
+      font-size: em(26);
+    }
+    &__title,&__contact{
+      font-family: "Tenez", sans-serif;
+      align-self: center;
+    }
+    &__contact{
+      background-color: white;
+      padding: 15px 40px;
+      font-size: em(20);
     }
   }
 }

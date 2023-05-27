@@ -15,7 +15,7 @@
 
         <section class="page__projects projects">
             <div class="projects__regroup">
-                <h2 class="projects__title">Découvrez mes derniers projets </h2>
+                <h2 class="projects__title bold">Découvrez mes derniers projets </h2>
                 <p class="projects__all">Tous mes projets</p>
             </div>
             <div class="projects__articles">
@@ -47,12 +47,20 @@
 
         <section class="page__presentation presentation">
             <div class="presentation__regroup">
-                <h2 class="presentation__title"><?= get_field('presentation_titre')?> </h2>
+                <h2 class="presentation__title bold"><?= get_field('presentation_titre')?> </h2>
                 <p class="presentation__text"><?= get_field('presentation_texte')?></p>
             </div>
             <figure class="presentation__fig">
                 <img src="<?= get_field('presentation_image')?>" alt="" class="presentation__img">
             </figure>
+        </section>
+
+        <section class="page__footer footer">
+            <div class="footer__regroup">
+                <h2 class="footer__title bold">Vous avez envie de discuter ? </h2>
+                <a href="<?= get_the_permalink(portfolio_get_template_page('template-contact')) ?>" class="footer__contact"> Contactez-moi !</a>
+            </div>
+
         </section>
     </main>
 <?php get_footer(); ?>
