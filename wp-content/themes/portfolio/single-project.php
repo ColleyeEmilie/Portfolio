@@ -2,9 +2,9 @@
 <?php if(have_posts()): while(have_posts()): the_post(); ?>
     <main class="singleProject">
         <h2 class="singleProject__title hidden">Mon projet <?= get_field('projet_nom')?> </h2>
+        <div class="test"></div>
         <article>
             <h3 class="singleProject__title title"><?= get_field('projet_nom')?> </h3>
-
             <div class="singleProject__hero">
                 <figure class="singleProject__hero--fig">
                     <img src="<?= get_field('projet_img_principale')?>" alt="" class="singleProject__hero--img">

@@ -1,13 +1,12 @@
+
 .singleProject{
   padding: em(100) em(70) 0 ;
-  &__title{
-
+  &__hero,&__content, &__figures{
+    display: flex;
   }
   &__hero,&__content{
     justify-content: space-between;
-  }
-  &__hero,&__content, &__figures{
-    display: flex;
+    margin-bottom: 50px;
   }
   &__hero--fig{
     max-width: 523px;
