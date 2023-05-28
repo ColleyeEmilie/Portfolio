@@ -1,0 +1,81 @@
+.layout__contact{
+  min-height: 100vh;
+}
+#contact{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+.contact {
+  padding: em(100) 0 0 em(70);
+  &__background{
+    min-height: 100vh;
+    min-width: 30vw;
+    right: 0;
+  }
+  .coordinates{
+    background-color: $color_darkGreen;
+    min-width: 320px;
+    position: relative;
+    top: -55px;
+    padding: em(100);
+    &__title{
+      font-size: em(24);
+      margin-bottom: em(8);
+    }
+    section{
+      margin-bottom: em(30);
+    }
+  }
+  .coordinates, a:hover, a:visited, a{
+    color:white;
+  }
+  a:hover{
+    font-weight: normal;
+  }
+  &__title {
+    margin-bottom: em(22);
+    font-size: em(52);
+  }
+  &__name, {
+    display: flex;
+    .contact{
+      &__field{
+        input{
+          width: 255px;
+        }
+        #firstname{
+          margin-right: em(40);
+        }
+      }
+    }
+  }
+  &__field{
+      display: flex;
+      flex-direction: column;
+    label{
+      margin-bottom: 10px;
+    }
+    input{
+      height: 30px;
+    }
+    input, textarea{
+      margin-bottom: 20px;
+      width: 552px;
+      background-color: $color_lightGreen;
+      border:none;
+    }
+  }
+  &__footer{
+    display: flex;
+    flex-direction: row-reverse;
+    button{
+      width: 230px;
+      height: 30px;
+      background-color: $color_darkGreen;
+      border:none;
+      color:white;
+      cursor: pointer;
+    }
+  }
+}

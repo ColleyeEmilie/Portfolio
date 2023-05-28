@@ -1,0 +1,33 @@
+.singleProject{
+  padding: em(100) em(70) 0 ;
+  &__title{
+
+  }
+  &__hero,&__content{
+    justify-content: space-between;
+  }
+  &__hero,&__content, &__figures{
+    display: flex;
+  }
+  &__hero--fig{
+    max-width: 523px;
+    max-height: 218px;
+  }
+  &__hero--img{
+    width: 523px;
+    height: 218px;
+    object-fit: cover;
+  }
+  &__fig{
+    max-width: 157px;
+    max-height: 256px;
+  }
+  &__img{
+    width:  157px;
+    height: 256px;
+    object-fit: cover;
+  }
+  &__presentation--1, &__presentation--2{
+    max-width: 400px;
+  }
+}

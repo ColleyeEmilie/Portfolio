@@ -1,10 +1,10 @@
 <?php get_header(); ?>
     <main class="page">
         <section class="page__hero hero">
-            <div class="hero__background"></div>
+            <div class="hero__background background"></div>
             <div class="hero__content">
                 <div class="hero__regroup">
-                    <h2 class="hero__title"><?= get_field('hero_titre')?> </h2>
+                    <h2 class="hero__title title"><?= get_field('hero_titre')?> </h2>
                     <p class="hero__presentation"><?= get_field('hero_presentation')?></p>
                 </div>
                 <figure class="hero__fig">
@@ -15,7 +15,7 @@
 
         <section class="page__projects projects">
             <div class="projects__regroup">
-                <h2 class="projects__title bold">Découvrez mes derniers projets </h2>
+                <h2 class="projects__title title bold">Découvrez mes derniers projets </h2>
                 <p class="projects__all">Tous mes projets</p>
             </div>
             <div class="projects__articles">
@@ -33,7 +33,7 @@
                             <figure class="project__fig">
                                 <img src="<?= get_field('project_thumbnail')?>" alt="" class="project__img">
                                     <p class="project__link">
-                                        <span class="sro"><?= get_the_title(); ?></span>
+                                        <span class="title"><?= get_the_title(); ?></span>
                                     </p>
                             </figure>
                         </div>
@@ -46,19 +46,22 @@
         </section>
 
         <section class="page__presentation presentation">
-            <div class="presentation__regroup">
-                <h2 class="presentation__title bold"><?= get_field('presentation_titre')?> </h2>
-                <p class="presentation__text"><?= get_field('presentation_texte')?></p>
+            <div class="presentation__background background"></div>
+            <div class="presentation__content">
+                <div class="presentation__regroup">
+                    <h2 class="presentation__title title bold"><?= get_field('presentation_titre')?> </h2>
+                    <p class="presentation__text"><?= get_field('presentation_texte')?></p>
+                </div>
+                <figure class="presentation__fig">
+                    <img src="<?= get_field('presentation_image')?>" alt="" class="presentation__img">
+                </figure>
             </div>
-            <figure class="presentation__fig">
-                <img src="<?= get_field('presentation_image')?>" alt="" class="presentation__img">
-            </figure>
         </section>
 
         <section class="page__footer footer">
             <div class="footer__regroup">
-                <h2 class="footer__title bold">Vous avez envie de discuter ? </h2>
-                <a href="<?= get_the_permalink(portfolio_get_template_page('template-contact')) ?>" class="footer__contact"> Contactez-moi !</a>
+                <h2 class="footer__title title bold">Vous avez envie de discuter ? </h2>
+                <a href="<?= get_the_permalink(portfolio_get_template_page('template-contact')) ?>" class="footer__contact title"> Contactez-moi !</a>
             </div>
 
         </section>

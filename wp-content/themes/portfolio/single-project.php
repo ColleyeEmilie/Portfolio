@@ -3,27 +3,34 @@
     <main class="singleProject">
         <h2 class="singleProject__title hidden">Mon projet <?= get_field('projet_nom')?> </h2>
         <article>
-            <h3 class="singleProject__title"><?= get_field('projet_nom')?> </h3>
+            <h3 class="singleProject__title title"><?= get_field('projet_nom')?> </h3>
 
-            <figure class="hero__fig">
-                <img src="<?= get_field('projet_img_principale')?>" alt="" class="hero__img">
-            </figure>
+            <div class="singleProject__hero">
+                <figure class="singleProject__hero--fig">
+                    <img src="<?= get_field('projet_img_principale')?>" alt="" class="singleProject__hero--img">
+                </figure>
+                <p class="singleProject__presentation--1"><?= get_field('projet_presentation_1')?></p>
+            </div>
 
-            <p class="hero__presentation"><?= get_field('projet_presentation_1')?></p>
+            <div class="singleProject__content">
+                <div class="singleProject__presentation">
+                    <p class="singleProject__presentation--2"><?= get_field('projet_presentation_2')?></p>
+                    <a href="<?= get_field('projet_link')?>">Visiter le site</a>
+                    <a href="<?= get_field('projet_link_github')?>">Voir sur Github</a>
+                </div>
 
-            <p class="hero__presentation"><?= get_field('projet_presentation_2')?></p>
-            <a href="<?= get_field('projet_link')?>">Visiter le site</a>
-            <a href="<?= get_field('projet_link_github')?>">Voir sur Github</a>
-
-            <figure class="hero__fig">
-                <img src="<?= get_field('projet_img_1')?>" alt="" class="hero__img">
-            </figure>
-            <figure class="hero__fig">
-                <img src="<?= get_field('projet_img_2')?>" alt="" class="hero__img">
-            </figure>
-            <figure class="hero__fig">
-                <img src="<?= get_field('projet_img_3')?>" alt="" class="hero__img">
-            </figure>
+                <div class="singleProject__figures">
+                    <figure class="singleProject__fig">
+                        <img src="<?= get_field('projet_img_1')?>" alt="" class="singleProject__img">
+                    </figure>
+                    <figure class="singleProject__fig">
+                        <img src="<?= get_field('projet_img_2')?>" alt="" class="singleProject__img">
+                    </figure>
+                    <figure class="singleProject__fig">
+                        <img src="<?= get_field('projet_img_3')?>" alt="" class="singleProject__img">
+                    </figure>
+                </div>
+            </div>
         </article>
     </main>
 <?php endwhile; endif; ?>

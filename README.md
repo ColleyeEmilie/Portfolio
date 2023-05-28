@@ -7,5 +7,3 @@ Ce portfolio est réalisé avec Wordpress. Vous pourrez trouver ci-dessus le th�
 
 Vous pourrez également trouver dans les fichiers disponible mon moodboard ainsi que mon design créé sur Figma. 
 
-
-

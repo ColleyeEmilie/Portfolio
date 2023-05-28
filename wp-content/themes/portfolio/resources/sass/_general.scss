@@ -1,0 +1,33 @@
+body{
+  font-family: "roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: $color_fontDark;
+  background-color: white;
+  overflow-x: hidden;
+}
+a:visited, a:hover, a:active, a   {
+  color: $color_fontDark;
+}
+a:hover, a:active  {
+  font-weight: bolder;
+}
+a{
+  text-decoration: none;
+}
+.title{
+  font-family: "Tenez", sans-serif;
+}
+.hidden{
+  position: absolute;
+  opacity: 0;
+  left: 9999px;
+}
+.bold{
+  font-weight: bold;
+}
+.background{
+  position: absolute;
+  z-index: -1;
+  background-color: $color_lightGreen;
+}

@@ -1,33 +1,6 @@
-body{
-  font-family: "roboto", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  color: $color_fontDark;
-  background-color: white;
-}
-a:visited, a:hover, a:active, a   {
-  color: $color_fontDark;
-}
-a:hover, a:active  {
-font-weight: bolder;
-}
-a{
-  text-decoration: none;
-}
-
-.hidden{
-  position: absolute;
-  opacity: 0;
-}
-.bold{
-  font-weight: bold;
-}
 .page {
   a{
     font-weight: bolder;
-  }
-  .hero__title, .projects__title, .presentation__title{
-    font-family: "tenez", sans-serif;
   }
   .hero {
     min-height: 110vh;
@@ -66,11 +39,8 @@ a{
       flex-direction: column;
     }
     &__background{
-      position: absolute;
       min-height: 120vh;
       min-width: 37vw;
-      z-index: -1;
-      background-color: $color_lightGreen;
     }
   }
   .projects{
@@ -103,7 +73,6 @@ a{
         width: 100px;
         text-align: center;
         position: absolute;
-        font-family: "Tenez", sans-serif;
         padding: 15px 70px;
         background-color: white;
         align-self: end;
@@ -139,9 +108,18 @@ a{
   }
   .presentation{
     min-height: 80vh;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
+    &__content{
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: center;
+      min-height: 80vh;
+    }
+    &__background{
+      margin-top: -120px;
+      z-index: 1;
+      min-height: 286px;
+      min-width: 394px;
+    }
     &__title{
       font-size: em(36);
       line-height: em(20);
@@ -153,11 +131,14 @@ a{
     &__fig{
       max-width: 400px;
       max-height: 430px;
+      align-self: center;
     }
     &__img{
       width: 400px;
       height: 430px;
       object-fit: cover;
+      position: relative;
+      z-index: 2;
     }
     &__regroup{
       max-width: 440px;
@@ -165,6 +146,7 @@ a{
       display: flex;
       align-self: center;
       flex-direction: column;
+      min-height: 100%;
     }
   }
 
@@ -184,7 +166,6 @@ a{
       font-size: em(26);
     }
     &__title,&__contact{
-      font-family: "Tenez", sans-serif;
       align-self: center;
     }
     &__contact{
