@@ -2,7 +2,7 @@
 <?php if(have_posts()): while(have_posts()): the_post(); ?>
     <main class="singleProject">
         <h2 class="singleProject__title hidden">Mon projet <?= get_field('projet_nom')?> </h2>
-        <div class="test"></div>
+        <div class="singleProject__background"></div>
         <article>
             <h3 class="singleProject__title title"><?= get_field('projet_nom')?> </h3>
             <div class="singleProject__hero">
@@ -15,8 +15,14 @@
             <div class="singleProject__content">
                 <div class="singleProject__presentation">
                     <p class="singleProject__presentation--2"><?= get_field('projet_presentation_2')?></p>
-                    <a href="<?= get_field('projet_link')?>">Visiter le site</a>
-                    <a href="<?= get_field('projet_link_github')?>">Voir sur Github</a>
+                    <div class="singleProject__links">
+                        <div class="singleProject__link--1">
+                            <a href="<?= get_field('projet_link')?>">Visiter le site</a>
+                        </div>
+                        <div class="singleProject__link--2">
+                            <a href="<?= get_field('projet_link_github')?>">Voir sur Github</a>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="singleProject__figures">
