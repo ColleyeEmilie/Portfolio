@@ -1,11 +1,11 @@
 .projects{
   padding: em(100) em(70)  ;
   &__wrapper{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-areas: "1 2"
-                       "3 4";
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    top: -75px;
   }
   &__title {
     margin-bottom: em(22);
@@ -13,22 +13,56 @@
     color:white;
     max-width: 400px;
     line-height: 1.1em;
-    position: absolute;
     b{
       font-weight: bolder;
     }
+  }
+  &__link{
+    text-align: center;
+    background-color: $color_darkGreen;
+    max-width:170px;
+    min-height: 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    padding: em(10);
+    color:white;
+    p{
+      align-self: center;
+    }
+  }
+  &__content{
+    margin-bottom: em(130);
+    margin-right: em(100);
+    a{
+      position: relative;
+    }
+  }
+  &__regroup{
+    position: absolute;
+    bottom: -120px;
+    right: -100px;
+    background-color: white;
+    max-width: 315px;
+    padding: em(45) em(50);
+    z-index: 10;
+    box-shadow: 10px 10px 30px -1px rgba(0, 0, 0, 0.12);
+  }
+  &__name{
+    font-size:em(26);
+    margin-bottom: em(19);
+  }
+  &__desc{
+    line-height: em(26);
+    margin-bottom: em(40);
   }
   &__background{
     z-index: -1;
     width: 100vw;
     background-color: $color_darkGreen;
-    height: 40vh;
+    height: 50vh;
     position: absolute;
     margin: em(-100) em(-70) 0 ;
-  }
-  &__fig, &__fig::before{
-    max-width: 293px;
-    max-height: 322px;
   }
   &__fig{
     margin-top: em(70);
@@ -36,9 +70,13 @@
     display: flex;
     justify-content: center;
   }
+  &__fig, &__fig::before{
+    max-width: 420px;
+    max-height: 450px;
+  }
   &__img{
-    width: 293px;
-    height: 322px;
+    width: 420px;
+    height: 450px;
     object-fit: cover;
   }
   &__fig::before{
