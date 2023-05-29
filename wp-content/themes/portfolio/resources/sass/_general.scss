@@ -11,6 +11,7 @@ a:visited, a:hover, a:active, a   {
 }
 a:hover, a:active  {
   font-weight: bolder;
+  transition: .3s;
 }
 a{
   text-decoration: none;

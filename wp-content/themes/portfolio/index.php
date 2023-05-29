@@ -13,12 +13,12 @@
             </div>
         </section>
 
-        <section class="page__projects projects">
-            <div class="projects__regroup">
-                <h2 class="projects__title title bold">Découvrez mes derniers projets </h2>
-                <p class="projects__all">Tous mes projets</p>
+        <section class="page__projects projectsIndex">
+            <div class="projectsIndex__regroup">
+                <h2 class="projectsIndex__title title bold">Découvrez mes derniers projets </h2>
+                <p class="projectsIndex__all">Tous mes projets</p>
             </div>
-            <div class="projects__articles">
+            <div class="projectsIndex__articles">
                 <?php
                 // Faire une requête en DB pour récupérer 3 projets
                 $projects = new WP_Query([
