@@ -96,5 +96,25 @@
   }
 }
 @media screen and (max-width: 990px) {
-
+  .projects{
+    &__wrapper{
+      flex-direction: column;
+    }
+    &__regroup{
+      left: 120px;
+      right: 0;
+    }
+    &__content{
+      margin-right: 0;
+    }
+    &__content:nth-child(2n){
+      display: flex;
+      justify-content: flex-end;
+      .projects{
+        &__regroup{
+          left: -100px;
+        }
+      }
+    }
+  }
 }
