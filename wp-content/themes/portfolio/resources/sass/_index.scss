@@ -8,8 +8,7 @@
       display: flex;
       flex-direction: row-reverse;
       justify-content: center;
-      padding-top: em(100);
-      padding-bottom: em(80);
+      padding: em(100) em(70) em(80);
     }
     &__title {
       font-size: em(58);
@@ -24,7 +23,7 @@
     &__fig {
       max-width: 430px;
       max-height: 530px;
-      margin-left: em(70);
+      margin-left: 0;
     }
     &__img {
       width: 430px;
@@ -68,7 +67,6 @@
       justify-content: space-between;
     }
     .project{
-
       &__link{
         width: 100px;
         text-align: center;
@@ -174,4 +172,78 @@
       font-size: em(20);
     }
   }
+}
+@media screen and (max-width: 990px) {
+  .page{
+    .hero{
+      &__img{
+        width: 400px;
+        height: 500px;
+      }
+      &__regroup{
+        margin-left:em(50);
+      }
+      &__fig{
+        max-width: 400px;
+        max-height: 500px;
+      }
+      &__title{
+        font-size: em(46);
+      }
+    }
+
+    .projectsIndex {
+      min-height: 80vh;
+      &__title{
+        font-size: 2em;
+      }
+      &__all{
+        font-size: em(12);
+      }
+      .project{
+        &__fig, &__fig::before{
+          max-width: 233px;
+          max-height: 262px;
+        }
+        &__img{
+          width: 203px;
+          height: 232px;
+        }
+        &__link{
+          width: 100px;
+          padding: em(15) em(30);
+          font-size: em(16);
+        }
+      }
+    }
+    .presentation{
+      .background{
+        min-width: 304px;
+      }
+      &__title{
+      font-size: 2em;
+      }
+      &__content{
+        padding: em(70);
+      }
+      &__text{
+        font-size: 1em;
+      }
+      &__regroup{
+        margin-left: em(40);
+        max-width: 350px;
+      }
+      &__fig{
+        max-width: 350px;
+        max-height: 380px;
+      }
+      &__img{
+        width: 350px;
+        height: 380px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+
 }
