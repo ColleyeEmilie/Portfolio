@@ -80,23 +80,78 @@
   }
 }
 @media screen and (max-width: 990px) {
+  #lastname, #firstname{
+    width: inherit
+  }
   #contact{
     flex-direction: column-reverse;
-    max-width: 556px;
-  }
-  .coordinates{
-    max-width: 556px;
-    padding: 3em;
-    top:0;
   }
   .contact{
+    .coordinates{
+      padding: 3em 3em 5em;
+      top:0;
+      text-align: center;
+      width: 109%;
+      left: -70px;
+      &__content{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+      &__mail, &__phone, &__address{
+        min-width: 30%;
+      }
+      &__postal{
+        line-height: 1.6em;
+      }
+      &__address{
+        margin-bottom: 0;
+      }
+    }
     padding-right: 4.375em;
+    input, textarea{
+      max-width: inherit;
+    }
     &__content{
       margin-bottom: 2em;
     }
+    &__name{
+      justify-content: space-between;
+      .contact{
+        &__field{
+          min-width: 50%;
+        }
+      }
+    }
     &__footer{
-      max-width: 556px;
+      max-width: inherit;
       margin-bottom: 3em;
     }
+    &__background{
+      display: none;
+    }
+  }
+}
+@media screen and (max-width: 769px) {
+  .contact{
+    padding: 6em 2em 0;
+    &__title{
+      font-size: em(46);
+      margin-bottom: 1em;
+    }
+    &__name {
+    flex-direction: column;
+      .contact__field{
+        #firstname {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  .contact{
+    padding-right: 1em;
+    padding-left: 1em;
   }
 }
