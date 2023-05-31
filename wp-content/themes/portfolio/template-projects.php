@@ -16,7 +16,7 @@
         if($projects->have_posts()): while($projects->have_posts()): $projects->the_post();?>
             <section class="projects__content">
                 <h4 class="projects__name hidden">Projet <?= get_the_title(); ?></h4>
-                <a href="<?= get_the_permalink(); ?>">
+                <a class="projects__wrapper--link" href="<?= get_the_permalink(); ?>">
                     <figure class="projects__fig">
                         <img src="<?= get_field('project_thumbnail')?>" alt="" class="projects__img">
                     </figure>

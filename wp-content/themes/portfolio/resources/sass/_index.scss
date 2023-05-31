@@ -247,12 +247,16 @@
 }
 @media screen and (max-width: 769px) {
 .page{
+  &__footer{
+    padding: 3em 2em;
+  }
   .hero{
     min-height: 95vh;
     &__content{
       flex-direction: column-reverse;
       padding-left: 0;
       padding-right: 0;
+      padding-top: 4em;
     }
     &__regroup{
       padding: 0 3em 2em 3em;
@@ -281,8 +285,11 @@
     }
   }
   .projectsIndex{
+    padding-left: 2em;
+    padding-right: 2em;
     padding-bottom: 8em;
     &__articles{
+      max-width: 100%;
       flex-direction: column;
       justify-content: space-around;
     }
@@ -291,6 +298,8 @@
       margin-bottom: 1.6em;
     }
     .project{
+      align-self: center;
+      width: 400px;
       &__link{
         width: 50%;
       }
@@ -311,9 +320,12 @@
   .presentation{
     &__background{
       margin-top: em(-50);
+      width: 60vw;
     }
     &__content{
       flex-direction: column-reverse;
+      padding-left: 2em;
+      padding-right: 2em;
     }
     &__regroup{
       margin-left: 0;
@@ -331,5 +343,28 @@
 }
 
 @media screen and (max-width: 479px){
-
+  .page{
+    .hero{
+      &__content{
+        min-height: 90vh;
+        padding-bottom: 0;
+        justify-content: flex-end;
+      }
+      &__regroup{
+        padding: 0 2em 2em 2em;
+      }
+      &__title{
+        font-size: em(40);
+        margin-bottom: 1em;
+      }
+      &__fig{
+        margin-top: 0;
+      }
+    }
+    .presentation{
+      &__fig, &__img{
+        max-width: 100%;
+      }
+    }
+  }
 }

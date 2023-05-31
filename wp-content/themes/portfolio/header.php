@@ -9,15 +9,20 @@
     <link rel="stylesheet" href="<?= get_stylesheet_directory_uri() . '/public/css/site.css'; ?>" />
 </head>
 <body>
-<header class="header hidden">
-    <h1 class="header__sitename"><?= get_bloginfo('name'); ?></h1>
-    <p class="header__tagline"><?= get_bloginfo('description'); ?></p>
-</header>
-<nav class="nav">
+
+<header class="header">
+    <h1 class="header__sitename hidden"><?= get_bloginfo('name'); ?></h1>
+    <p class="header__tagline hidden"><?= get_bloginfo('description'); ?></p>
     <h2 class="hidden">Navigation</h2>
-    <?php foreach(dwp_get_menu('main') as $link): ?>
-        <a href="<?= $link->href; ?>" class="nav__link">
-            <span class="nav__label"><?= $link->label; ?></span>
-        </a>
-    <?php endforeach; ?>
-</nav>
+    <input class="menu-btn" type="checkbox" id="menu-btn" />
+    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+    <ul class="menu">
+        <?php foreach(dwp_get_menu('main') as $link): ?>
+        <li>
+            <a href="<?= $link->href; ?>" class="nav__link">
+                <span class="nav__label"><?= $link->label; ?></span>
+            </a>
+        </li>
+        <?php endforeach; ?>
+    </ul>
+</header>
