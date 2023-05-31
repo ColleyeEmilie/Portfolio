@@ -80,5 +80,23 @@
   }
 }
 @media screen and (max-width: 990px) {
-
+  #contact{
+    flex-direction: column-reverse;
+    max-width: 556px;
+  }
+  .coordinates{
+    max-width: 556px;
+    padding: 3em;
+    top:0;
+  }
+  .contact{
+    padding-right: 4.375em;
+    &__content{
+      margin-bottom: 2em;
+    }
+    &__footer{
+      max-width: 556px;
+      margin-bottom: 3em;
+    }
+  }
 }
