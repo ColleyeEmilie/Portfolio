@@ -43,7 +43,6 @@
     margin-bottom: em(130);
     &--img{
       width: 800px;
-      height: 400px;
       object-fit: cover;
     }
     &--fig{
@@ -116,6 +115,53 @@
     &__presentation, &__presentation--1, &__presentation--2{
       max-width: 600px;
       align-self: center;
+    }
+  }
+}
+@media screen and (max-width: 769px){
+  .singleProject{
+    padding-left: 2em;
+    padding-right: 2em;
+    &__background{
+      margin: -6.25em -2em 0;
+    }
+    &__presentation{
+      &--1, &--2{
+        max-width: 500px;
+      }
+    }
+    &__fig{
+      position: relative;
+    }
+
+    &__fig:nth-child(1), &__fig:nth-child(3){
+      filter:blur(1px);
+    }
+    &__fig:nth-child(1), &__fig:nth-child(2){
+      margin-right: 0;
+    }
+    &__fig:nth-child(1){
+      right: -10%;
+    }
+    &__fig:nth-child(3){
+      left: -10%;
+      z-index: -1;
+    }
+  }
+}
+
+@media screen and (max-width: 479px){
+  .singleProject{
+    &__presentation{
+      max-width: 100%;
+    }
+    &__links{
+      flex-direction: column;
+    }
+    &__link{
+      &--1{
+        margin-bottom: 1em;
+      }
     }
   }
 }

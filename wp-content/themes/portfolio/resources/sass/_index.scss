@@ -285,9 +285,9 @@
     }
   }
   .projectsIndex{
-    padding-left: 2em;
-    padding-right: 2em;
-    padding-bottom: 8em;
+    display: flex;
+    flex-direction: column;
+    padding: em(50) 2em 4em 2em;
     &__articles{
       max-width: 100%;
       flex-direction: column;
@@ -306,12 +306,19 @@
       &__img{
         min-width: 100%;
       }
+      &__fig{
+        margin-bottom: 5em;
+        margin-top: 0;
+      }
       &__fig, &__fig:before{
         max-width: inherit;
       }
     }
     &__regroup{
       flex-direction: column;
+      align-self: center;
+      width: 500px;
+      margin-bottom: 2em;
     }
     &__all{
       align-self: flex-end;
@@ -329,7 +336,7 @@
     }
     &__regroup{
       margin-left: 0;
-      max-width: 100%;
+      max-width: 500px;
     }
     &__title{
       font-size: em(24);
@@ -338,6 +345,15 @@
     &__fig{
       margin-bottom: 3em;
     }
+  }
+  .footer{
+    &__title{
+      font-size: em(20);
+    }
+    &__contact{
+      font-size: em(16);
+    }
+
   }
 }
 }
@@ -351,7 +367,7 @@
         justify-content: flex-end;
       }
       &__regroup{
-        padding: 0 2em 2em 2em;
+        padding: 0 1em 2em 1em;
       }
       &__title{
         font-size: em(40);
@@ -359,6 +375,11 @@
       }
       &__fig{
         margin-top: 0;
+      }
+    }
+    .projectsIndex{
+      &__regroup{
+        width: 100%;
       }
     }
     .presentation{
