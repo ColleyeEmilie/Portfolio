@@ -251,23 +251,24 @@
     padding: 3em 2em;
   }
   .hero{
-    min-height: 95vh;
+    max-height: 650px;
     &__content{
       flex-direction: column-reverse;
       padding-left: 0;
       padding-right: 0;
-      padding-top: 4em;
+      padding-top: 0;
     }
     &__regroup{
       padding: 0 3em 2em 3em;
       margin: 0;
       position: relative;
-      bottom: -180px;
+      top: -140px;
     }
     &__fig{
+      height: 500px;
+      max-height: inherit;
       max-width: 100%;
-      margin-top: 3em;
-      position: absolute;
+      position: relative;
       z-index: -1;
     }
     &__fig::before{
@@ -281,7 +282,7 @@
     }
     &__img{
       min-width: 100vw;
-      height: 50vh;
+      height: 100%;
     }
   }
   .projectsIndex{
@@ -362,7 +363,6 @@
   .page{
     .hero{
       &__content{
-        min-height: 90vh;
         padding-bottom: 0;
         justify-content: flex-end;
       }
