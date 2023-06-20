@@ -21,9 +21,23 @@
       line-height: em(25);
     }
     &__fig {
+      position: relative;
       max-width: 430px;
       max-height: 530px;
       margin-left: 0;
+    }
+    &__fig::after{
+      animation: rotation 12s infinite linear;
+      top: -75px;
+      right: -75px;
+      position: absolute;
+      content:url('../img/emiliecolleye.svg');
+      width: 150px;
+      height: 150px;
+      z-index: 20;
+    }
+    &__fig:hover::after{
+      animation-play-state: paused;
     }
     &__img {
       width: 430px;
@@ -62,11 +76,24 @@
       align-self: center;
       letter-spacing: .15rem;
     }
+    &__all::after{
+      position: relative;
+      top:7px;
+      margin-left: em(20);
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      content:url('../img/arrow-right.svg');
+    }
     &__articles{
       display: flex;
       justify-content: space-between;
     }
     .project{
+      &__fig:hover{
+          filter: brightness(0.5);
+          transition: .3s ease-in-out;
+      }
       &__link{
         width: 100px;
         text-align: center;
@@ -81,6 +108,12 @@
       &__fig, &__fig::before{
         max-width: 293px;
         max-height: 322px;
+      }
+      &__content{
+        max-width: 293px;
+        position: relative;
+        display: flex;
+        justify-content: center;
       }
       &__fig{
         margin-top: em(70);
@@ -149,7 +182,6 @@
   }
 
   .footer{
-    min-height: 25vh;
     background-color: $color_darkGreen;
     padding: 40px 65px;
     &__regroup{
@@ -289,14 +321,16 @@
     display: flex;
     flex-direction: column;
     padding: em(50) 2em 4em 2em;
+
     &__articles{
       max-width: 100%;
       flex-direction: column;
       justify-content: space-around;
     }
     &__title{
+      max-width: 350px;
+      line-height: 1.3em;
       font-size: em(24);
-      margin-bottom: 1.6em;
     }
     .project{
       align-self: center;
@@ -316,13 +350,11 @@
       }
     }
     &__regroup{
-      flex-direction: column;
-      align-self: center;
-      width: 500px;
-      margin-bottom: 2em;
+      margin-bottom: 3em;
     }
-    &__all{
-      align-self: flex-end;
+    &__all::after{
+      width: 20px;
+      height: 20px;
     }
   }
   .presentation{

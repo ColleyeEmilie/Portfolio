@@ -8,7 +8,7 @@
                     <p class="hero__presentation"><?= get_field('hero_presentation')?></p>
                 </div>
                 <figure class="hero__fig">
-                    <img src="<?= get_field('hero_image')?>" alt="" class="hero__img">
+                    <?= get_the_post_thumbnail(null, 'index_thumbnail', ['class' => 'hero__img']); ?>
                 </figure>
             </div>
         </section>
@@ -20,7 +20,6 @@
             </div>
             <div class="projectsIndex__articles">
                 <?php
-                // Faire une requête en DB pour récupérer 3 projets
                 $projects = new WP_Query([
                     'post_type' => 'project',
                     'posts_per_page' => 3
@@ -30,12 +29,14 @@
                         <a href="<?= get_the_permalink(); ?>">
                         <div class="project__card">
                             <h3 class="project__name hidden"><?= get_the_title(); ?></h3>
-                            <figure class="project__fig">
-                                <img src="<?= get_field('project_thumbnail')?>" alt="" class="project__img">
-                                    <p class="project__link">
-                                        <span class="title"><?= get_the_title(); ?></span>
-                                    </p>
-                            </figure>
+                            <div class="project__content">
+                                <figure class="project__fig">
+                                    <?= get_the_post_thumbnail(null, 'index_projects_thumbnail', ['class' => 'project__img']); ?>
+                                </figure>
+                                <p class="project__link">
+                                    <span class="title"><?= get_the_title(); ?></span>
+                                </p>
+                            </div>
                         </div>
                         </a>
                     </article>
@@ -50,7 +51,9 @@
             <div class="presentation__content">
                 <div class="presentation__regroup">
                     <h2 class="presentation__title title bold"><?= get_field('presentation_titre')?> </h2>
-                    <p class="presentation__text"><?= get_field('presentation_texte')?></p>
+                    <div class="presentation__text">
+                        <?= get_field('presentation_texte')?>
+                    </div>
                 </div>
                 <figure class="presentation__fig">
                     <img src="<?= get_field('presentation_image')?>" alt="" class="presentation__img">

@@ -85,8 +85,7 @@
                     <?php endif; ?>
                 </div>
             </section>
-    </section>
-        </div>
+
     </section>
 </main>
 <?php endwhile; endif; ?>

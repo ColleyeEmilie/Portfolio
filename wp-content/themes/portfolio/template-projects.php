@@ -18,7 +18,7 @@
                 <h4 class="projects__name hidden">Projet <?= get_the_title(); ?></h4>
                 <a class="projects__wrapper--link" href="<?= get_the_permalink(); ?>">
                     <figure class="projects__fig">
-                        <img src="<?= get_field('project_thumbnail')?>" alt="" class="projects__img">
+                        <?= get_the_post_thumbnail(null, 'index_projects_thumbnail', ['class' => 'projects__img']); ?>
                     </figure>
                     <div class="projects__regroup">
                         <h5 class="projects__name title bold"><?= get_the_title(); ?></h5>

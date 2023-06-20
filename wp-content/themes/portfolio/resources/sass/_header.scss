@@ -1,5 +1,19 @@
 .header {
-  color: $color_fontDark;
+  .menu{
+    margin: 1em 2em;
+  }
+  .true{
+    color: white;
+    li a:hover,a:visited .menu-btn:hover{
+      color:white;
+    }
+  }
+  .false{
+    li a:hover, a:visited, .menu-btn:hover{
+      color:$color_darkGreen;
+    }
+    color: $color_fontDark;
+  }
   width: 100%;
   z-index: 3;
   position:absolute;
@@ -15,9 +29,6 @@
     display: block;
     padding: 20px 20px;
     text-decoration: none;
-  }
-  li a:hover, .menu-btn:hover{
-    color:$color_darkGreen;
   }
   .menu {
     clear: both;

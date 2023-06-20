@@ -3,7 +3,7 @@
     <main class="singleProject">
         <h2 class="singleProject__title hidden">Mon projet <?= get_field('projet_nom')?> </h2>
         <div class="singleProject__background"></div>
-        <article>
+        <article class="singleProject__article">
             <h3 class="singleProject__title title"><?= get_field('projet_nom')?> </h3>
             <div class="singleProject__hero">
                 <figure class="singleProject__hero--fig">
@@ -16,9 +16,11 @@
                 <div class="singleProject__presentation">
                     <p class="singleProject__presentation--2"><?= get_field('projet_presentation_2')?></p>
                     <div class="singleProject__links">
+                        <?php if(get_field('projet_link')):?>
                         <div class="singleProject__link--1">
                             <a href="<?= get_field('projet_link')?>">Visiter le site</a>
                         </div>
+                        <?php endif;?>
                         <div class="singleProject__link--2">
                             <a href="<?= get_field('projet_link_github')?>">Voir sur Github</a>
                         </div>

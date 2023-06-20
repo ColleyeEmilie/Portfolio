@@ -11,6 +11,7 @@ add_filter('use_block_editor_for_post', '__return_false', 10);
 // Activer les images "thumbnail" sur nos posts
 add_theme_support('post-thumbnails');
 add_image_size('index_projects_thumbnail', 293, 322, true);
+add_image_size('index_thumbnail', 430, 530, true);
 
 // Register existing navigation menus
 register_nav_menu('main', 'Navigation principale du site web (en-tête)');
@@ -53,6 +54,25 @@ register_post_type('project', [
         'hierarchical' => true,
         'menu_icon' => 'dashicons-art', // https://developer.wordpress.org/resource/dashicons/#pets,
         'supports' => ['title','thumbnail', 'page-attributes'],
+]);
+register_post_type('network',[
+    'label'=>'Networks',
+    'labels'=>[
+        'name'=>'Networks',
+        'singular_name'=>'Network'
+    ],
+    'description'=>'Liste des réseaux sociaux',
+    'menu_position'=>5,
+    'menu_icon'=>'dashicons-share',
+    'public' =>true,
+    'supports' => [
+        'title',
+        'editor',
+        'thumbnail',
+    ],
+    'rewrite' => [
+        'slug' => 'network',
+    ],
 ]);
 
 function dwp_get_projets($count = 20){
@@ -144,3 +164,4 @@ function portfolio_get_template_page(string $template): int|WP_Post|null
     ]);
     return $query->posts[0] ?? null;
 }
+

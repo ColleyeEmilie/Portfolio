@@ -1,6 +1,10 @@
 
 .singleProject{
   padding: em(100) em(70)  ;
+  &__article{
+    margin: 0 auto;
+    max-width: 1000px;
+  }
   &__background{
     z-index: -1;
     width: 100vw;
@@ -28,7 +32,7 @@
     &--1, &--2{
       text-align: center;
       background-color: $color_darkGreen;
-      min-width:170px;
+      min-width:120px;
       min-height: 30px;
       cursor: pointer;
       display: flex;
@@ -40,9 +44,11 @@
     }
   }
   &__hero{
-    margin-bottom: em(130);
+    padding-top: 2em;
+    margin-bottom: 5em;
     &--img{
-      width: 800px;
+      margin-right: 2em;
+      width: 600px;
       object-fit: cover;
     }
     &--fig{
@@ -60,14 +66,15 @@
     align-self: center;
   }
   &__fig{
-    max-width: 250px;
-    max-height: 350px;
+    max-width: 200px;
+    max-height: 300px;
   }
   &__fig:nth-child(1), &__fig:nth-child(2){
-    margin-right: em(35);
+    margin-right: 1em;
   }
   &__fig:nth-child(2){
     margin-top: em(25);
+    z-index: 2;
   }
   &__img{
     width:  250px;
@@ -84,14 +91,35 @@
     }
     &--2{
       margin-bottom: em(50);
+      margin-right: 2em;
+      width: 300px;
     }
   }
 }
 @media screen and (max-width: 990px) {
   .singleProject{
+    &__article{
+      max-width: 700px;
+    }
+    &__presentation{
+      &--2{
+        margin-top: 5em;
+        width: 100%;
+      }
+    }
+    &__links{
+      justify-content: flex-start;
+    }
+    &__link{
+      &--1{
+        margin-right: 1em;
+      }
+    }
     &__hero{
+      align-items: center;
       flex-direction: column;
       margin-bottom: 4em;
+      align-items: center;
       &--fig{
         margin-bottom: 2em;
         max-width: 100%;
@@ -152,11 +180,27 @@
 
 @media screen and (max-width: 479px){
   .singleProject{
+    &__figures{
+      justify-content: center;
+      flex-direction: column;
+    }
+    &__fig{
+      position: inherit;
+      margin-bottom: 3em;
+    }
+    &__fig:nth-child(1), &__fig:nth-child(3){
+      filter:none;
+    }
     &__presentation{
       max-width: 100%;
     }
     &__links{
       flex-direction: column;
+    }
+    &__link{
+      &--1{
+        margin-right: 0;
+      }
     }
     &__link{
       &--1{

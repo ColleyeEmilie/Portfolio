@@ -16,6 +16,9 @@ a:hover, a:active  {
 a{
   text-decoration: none;
 }
+strong{
+  font-weight: bolder;
+}
 .title{
   font-family: "Tenez", sans-serif;
 }
@@ -31,4 +34,15 @@ a{
   position: absolute;
   z-index: -1;
   background-color: $color_lightGreen;
+}
+.flex{
+  display: flex;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

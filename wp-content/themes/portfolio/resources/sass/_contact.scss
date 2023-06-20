@@ -9,7 +9,7 @@
 .contact {
   padding: em(100) 0 0 em(70);
   &__background{
-    min-height: 100vh;
+    min-height: 110vh;
     min-width: 30vw;
     right: 0;
   }
@@ -17,8 +17,8 @@
     background-color: $color_darkGreen;
     min-width: 320px;
     position: relative;
-    top: -55px;
-    padding: em(100);
+    top: -30px;
+    padding: 4em;
     &__title{
       font-size: em(24);
       margin-bottom: em(8);
@@ -42,7 +42,8 @@
     .contact{
       &__field{
         input{
-          width: 255px;
+          max-width: 255px;
+          min-width: 210px;
         }
         #firstname{
           margin-right: em(40);
@@ -87,6 +88,16 @@
     flex-direction: column-reverse;
   }
   .contact{
+    &__name, {
+      .contact{
+        &__field{
+          input{
+           width: 255px;
+          }
+        }
+      }
+    }
+
     .coordinates{
       padding: 3em 3em 5em;
       top:0;
@@ -113,7 +124,8 @@
       max-width: inherit;
     }
     &__content{
-      margin-bottom: 2em;
+      margin: 0 auto;
+      max-width: 700px;
     }
     &__name{
       justify-content: space-between;
@@ -134,14 +146,25 @@
 }
 @media screen and (max-width: 769px) {
   .contact{
+    .coordinates{
+     &__content{
+       flex-direction: column;
+     }
+    }
     padding: 6em 2em 0;
     &__title{
       font-size: em(42);
       margin-bottom: 1em;
     }
+    &__content{
+      margin:0;
+    }
     &__name {
     flex-direction: column;
       .contact__field{
+        input{
+          max-width: inherit;
+        }
         #firstname {
           margin-right: 0;
         }

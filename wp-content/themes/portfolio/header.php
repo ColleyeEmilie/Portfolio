@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1">
-    <title><?= get_bloginfo('name'); ?></title>
-    <link rel="stylesheet" href="https://use.typekit.net/bcf2kyi.css">
+    <title><?= get_the_title(); ?></title>
     <link rel="stylesheet" href="https://use.typekit.net/bcf2kyi.css">
     <link rel="stylesheet" href="<?= get_stylesheet_directory_uri() . '/public/css/site.css'; ?>" />
 </head>
 <body>
-
+<?php $isPage = is_page_template( 'template-projects.php'); $isSingle = get_post_type();?>
 <header class="header">
     <h1 class="header__sitename hidden"><?= get_bloginfo('name'); ?></h1>
     <p class="header__tagline hidden"><?= get_bloginfo('description'); ?></p>
@@ -20,7 +19,11 @@
         <?php foreach(dwp_get_menu('main') as $link): ?>
         <li>
             <a href="<?= $link->href; ?>" class="nav__link">
-                <span class="nav__label"><?= $link->label; ?></span>
+                <span class="nav__label <?php if($isPage || $isSingle === "project"){
+                    echo "true";
+                }else{
+                    echo "false";
+                };?>"><?= $link->label; ?></span>
             </a>
         </li>
         <?php endforeach; ?>
