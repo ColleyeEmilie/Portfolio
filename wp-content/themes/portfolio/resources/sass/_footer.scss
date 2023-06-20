@@ -36,7 +36,7 @@ footer {
   }
 }
 .isWhite{
-  background-color: (0,0,0, 0);
+  background-color: rgba(0,0,0, 0);
   color:$color_fontDark;
   li a:hover, a:visited, .menu-btn:hover{
     color:$color_darkGreen;

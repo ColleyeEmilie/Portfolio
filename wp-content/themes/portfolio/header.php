@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1">
+    <meta name="author" content="Emilie Colleye">
+    <meta name="description" content="Portfolio de Emilie Colleye, développeuse web. Découvrez tous mes projets et apprenez-en plus sur moi. N'hésitez pas à me contacter. ">
     <title><?= get_the_title(); ?></title>
     <link rel="stylesheet" href="https://use.typekit.net/bcf2kyi.css">
     <link rel="stylesheet" href="<?= get_stylesheet_directory_uri() . '/public/css/site.css'; ?>" />

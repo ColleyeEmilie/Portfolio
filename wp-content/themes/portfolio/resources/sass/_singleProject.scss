@@ -47,12 +47,13 @@
     padding-top: 2em;
     margin-bottom: 5em;
     &--img{
+      max-height: 400px;
       margin-right: 2em;
       width: 600px;
       object-fit: cover;
     }
     &--fig{
-      max-width: 800px;
+      max-width: 600px;
       max-height: 400px;
     }
   }

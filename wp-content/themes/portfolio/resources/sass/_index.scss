@@ -110,6 +110,7 @@
         max-height: 322px;
       }
       &__content{
+        margin-bottom: 5em;
         max-width: 293px;
         position: relative;
         display: flex;
@@ -342,7 +343,6 @@
         min-width: 100%;
       }
       &__fig{
-        margin-bottom: 5em;
         margin-top: 0;
       }
       &__fig, &__fig:before{

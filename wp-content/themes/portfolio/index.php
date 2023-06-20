@@ -16,7 +16,7 @@
         <section class="page__projects projectsIndex">
             <div class="projectsIndex__regroup">
                 <h2 aria-level="2" class="projectsIndex__title title bold">Découvrez mes derniers projets </h2>
-                <p class="projectsIndex__all">Tous mes projets</p>
+                <a href="https://emilie-colleye.com/projets/"><p class="projectsIndex__all">Tous mes projets</p></a>
             </div>
             <div class="projectsIndex__articles">
                 <?php

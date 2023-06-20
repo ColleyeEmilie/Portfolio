@@ -129,6 +129,11 @@
 }
 @media (max-width: 770px){
   .header{
+    .menu{
+      margin: 0 0;
+    }
+  }
+  .header{
     position: fixed;
     background-color: rgba(255,255,255,0.3);
     z-index: 30;
