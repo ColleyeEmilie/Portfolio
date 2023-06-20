@@ -7,7 +7,7 @@
             <h3 aria-level="3" class="singleProject__title title"><?= get_field('projet_nom')?> </h3>
             <div class="singleProject__hero">
                 <figure class="singleProject__hero--fig">
-                    <?= get_the_post_thumbnail(null, 'index_thumbnail', ['class' => 'singleProjet__hero--img']); ?>
+                    <?= get_the_post_thumbnail(null, 'index_thumbnail', ['class' => 'singleProject__hero--img']); ?>
                 </figure>
                 <p class="singleProject__presentation--1"><?= get_field('projet_presentation_1')?></p>
             </div>
