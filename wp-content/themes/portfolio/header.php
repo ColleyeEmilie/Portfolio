@@ -10,9 +10,9 @@
 <body>
 <?php $isPage = is_page_template( 'template-projects.php'); $isSingle = get_post_type();?>
 <header class="header">
-    <h1 class="header__sitename hidden"><?= get_bloginfo('name'); ?></h1>
+    <h1 aria-level="1" class="header__sitename hidden"><?= get_bloginfo('name'); ?></h1>
     <p class="header__tagline hidden"><?= get_bloginfo('description'); ?></p>
-    <h2 class="hidden">Navigation</h2>
+    <h2 aria-level="2" class="hidden">Navigation</h2>
     <input class="menu-btn" type="checkbox" id="menu-btn" />
     <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
     <ul class="menu">

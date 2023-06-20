@@ -1,7 +1,7 @@
 
 <footer class="footer" aria-labelledby="footer">
     <?php $isPage = is_front_page();?>
-    <h2 class="footer__title hidden" id="footer" aria-level="2"><?= __('Pied de page', 'prt'); ?></h2>
+    <h2 aria-level="2" class="footer__title hidden" id="footer" aria-level="2"><?= __('Pied de page', 'prt'); ?></h2>
 <div class="footer__all flex <?php if($isPage){
     echo "isGreen";
 }else{

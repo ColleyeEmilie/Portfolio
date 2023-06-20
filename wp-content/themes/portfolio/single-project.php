@@ -1,10 +1,10 @@
 <?php get_header(); ?>
 <?php if(have_posts()): while(have_posts()): the_post(); ?>
     <main class="singleProject">
-        <h2 class="singleProject__title hidden">Mon projet <?= get_field('projet_nom')?> </h2>
+        <h2 aria-level="2" class="singleProject__title hidden">Mon projet <?= get_field('projet_nom')?> </h2>
         <div class="singleProject__background"></div>
-        <article class="singleProject__article">
-            <h3 class="singleProject__title title"><?= get_field('projet_nom')?> </h3>
+        <section class="singleProject__article">
+            <h3 aria-level="3" class="singleProject__title title"><?= get_field('projet_nom')?> </h3>
             <div class="singleProject__hero">
                 <figure class="singleProject__hero--fig">
                     <img src="<?= get_field('projet_img_principale')?>" alt="" class="singleProject__hero--img">
@@ -39,7 +39,7 @@
                     </figure>
                 </div>
             </div>
-        </article>
+        </section>
     </main>
 <?php endwhile; endif; ?>
 <?php get_footer() ?>
