@@ -17,6 +17,7 @@
     <h2 aria-level="2" class="hidden">Navigation</h2>
     <input class="menu-btn" type="checkbox" id="menu-btn" />
     <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+    <a href="https://emilie-colleye.com/" class="logo"></a>
     <ul class="menu">
         <?php foreach(dwp_get_menu('main') as $link): ?>
         <li>
