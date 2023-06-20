@@ -46,3 +46,12 @@ strong{
     transform: rotate(360deg);
   }
 }
+
+.js-enabled .slide-in {
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+.js-enabled .slide-in.active {
+  opacity: 1;
+  transform: translateX(0%) scale(1);
+}

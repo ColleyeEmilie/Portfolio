@@ -14,7 +14,7 @@
             'posts_per_page' => 20
         ]);
         if($projects->have_posts()): while($projects->have_posts()): $projects->the_post();?>
-            <section class="projects__content">
+            <section class="projects__content slide-in">
                 <h4 aria-level="4" class="projects__name hidden">Projet <?= get_the_title(); ?></h4>
                 <a class="projects__wrapper--link" href="<?= get_the_permalink(); ?>">
                     <figure class="projects__fig">

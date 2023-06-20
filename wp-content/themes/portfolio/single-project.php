@@ -17,9 +17,9 @@
                     <p class="singleProject__presentation--2"><?= get_field('projet_presentation_2')?></p>
                     <div class="singleProject__links">
                         <?php if(get_field('projet_link')):?>
-                        <div class="singleProject__link--1">
-                            <a href="<?= get_field('projet_link')?>">Visiter le site</a>
-                        </div>
+                            <div class="singleProject__link--1">
+                                <a href="<?= get_field('projet_link')?>">Visiter le site</a>
+                            </div>
                         <?php endif;?>
                         <div class="singleProject__link--2">
                             <a href="<?= get_field('projet_link_github')?>">Voir sur Github</a>

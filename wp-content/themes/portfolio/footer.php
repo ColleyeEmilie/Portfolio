@@ -5,7 +5,8 @@
 <div class="footer__all flex <?php if($isPage){
     echo "isGreen";
 }else{
-    echo "isWhite";
+    echo "isWhite green";
+
 };?>">
     <a href="<?= get_the_permalink(portfolio_get_template_page('template-legals')); ?>"
        class="footer__left">Mentions légales</a>
@@ -31,6 +32,6 @@
     </div>
 </div>
 </footer>
-<script  src="./resources/js/main.js"></script>
+<script src="<?= get_stylesheet_directory_uri() . '/public/js/main.js'; ?>"></script>
 </body>
 </html>

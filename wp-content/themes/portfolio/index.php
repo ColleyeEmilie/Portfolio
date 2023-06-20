@@ -25,7 +25,7 @@
                     'posts_per_page' => 3
                 ]);
                 if($projects->have_posts()): while($projects->have_posts()): $projects->the_post();?>
-                    <article class=" project">
+                    <article class=" project slide-in">
                         <a href="<?= get_the_permalink(); ?>">
                         <div class="project__card">
                             <h3 aria-level="3" class="project__name hidden"><?= get_the_title(); ?></h3>

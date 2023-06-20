@@ -35,6 +35,7 @@ footer {
     color:white;
   }
 }
+
 .isWhite{
   background-color: rgba(0,0,0, 0);
   color:$color_fontDark;
@@ -47,3 +48,15 @@ footer {
     filter: invert(43%) sepia(4%) saturate(3835%) hue-rotate(109deg) brightness(76%) contrast(89%);
   }
 }
+
+  @media screen and (max-width: 990px) {
+    footer{
+      .green{
+        background-color: $color_darkGreen;
+        color: white;
+        li a:hover, a:visited, .menu-btn:hover{
+          color:white;
+        }
+      }
+    }
+  }
