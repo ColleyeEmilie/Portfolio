@@ -9,7 +9,7 @@
                     </div>
                 </div>
                 <figure class="hero__fig">
-                    <?= get_the_post_thumbnail(null, 'index_thumbnail', ['class' => 'hero__img']); ?>
+                    <?= get_the_post_thumbnail(null, 'index_thumbnail', ['class' => 'hero__img', 'loading'=> false]); ?>
                 </figure>
             </div>
         </section>
