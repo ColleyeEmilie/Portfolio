@@ -7,6 +7,10 @@
   justify-content: space-between;
 }
 .contact {
+  &__content, &__title{
+    margin-left: 15%;
+  }
+  margin: 0 auto;
   padding: em(100) 0 0 em(70);
   &__background{
     min-height: 110vh;
@@ -15,7 +19,7 @@
   }
   .coordinates{
     margin-left: 2em;
-    padding: 6em;
+    padding: 6em 15% 6em 6em;
     background-color: $color_darkGreen;
     min-width: 320px;
     position: relative;
@@ -23,6 +27,7 @@
     &__title{
       font-size: em(24);
       margin-bottom: em(8);
+      margin-left: 15%;
     }
     section{
       margin-bottom: em(30);
