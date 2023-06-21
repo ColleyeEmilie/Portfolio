@@ -353,8 +353,14 @@
       flex-direction: column;
     }
     &__fig{
+      max-width: 300px;
+      min-width: 300px;
       position: inherit;
       margin-bottom: 3em;
+    }
+    &__img{
+      max-width: 100%;
+      min-width: 100%;
     }
     &__fig:nth-child(1), &__fig:nth-child(3){
       filter:none;

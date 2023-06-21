@@ -5,7 +5,8 @@
             <div class="hero__content">
                 <div class="hero__regroup">
                     <h2 aria-level="2" class="hero__title title"><?= get_field('hero_titre')?> </h2>
-                    <p class="hero__presentation"><?= get_field('hero_presentation')?></p>
+                    <div class="hero__presentation"><p class="hero__presentation"><?= get_field('hero_presentation')?></p>
+                    </div>
                 </div>
                 <figure class="hero__fig">
                     <?= get_the_post_thumbnail(null, 'index_thumbnail', ['class' => 'hero__img']); ?>
