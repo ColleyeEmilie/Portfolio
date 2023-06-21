@@ -14,11 +14,12 @@
     right: 0;
   }
   .coordinates{
+    margin-left: 2em;
+    padding: 6em;
     background-color: $color_darkGreen;
     min-width: 320px;
     position: relative;
     top: -30px;
-    padding: 4em;
     &__title{
       font-size: em(24);
       margin-bottom: em(8);
@@ -99,7 +100,8 @@
     }
 
     .coordinates{
-      padding: 3em 3em 5em;
+      margin-left: 0;
+      padding: 3em;
       top:0;
       text-align: center;
       width: 109%;

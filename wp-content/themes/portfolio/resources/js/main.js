@@ -1,9 +1,18 @@
+
+// CommonJS
+const simpleParallax = require('simple-parallax-js');
+
 class Portfolio_Controller {
     constructor() {
         this.body = document.body
     }
 
     static run() {
+        const image = document.getElementsByClassName('parallax');
+        new simpleParallax(image, {
+            overflow: true,
+            orientation: 'down'
+        });
         document.body.classList.add('js-enabled');
         let options = {
             root: null,

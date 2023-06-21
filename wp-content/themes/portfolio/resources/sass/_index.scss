@@ -161,6 +161,7 @@
       line-height: em(26);
     }
     &__fig{
+      z-index: 2;
       max-width: 400px;
       max-height: 430px;
       align-self: center;
@@ -200,9 +201,16 @@
       align-self: center;
     }
     &__contact{
+      border: white solid 1px;
       background-color: white;
       padding: 15px 40px;
       font-size: em(20);
+    }
+    &__contact:hover{
+      border: white solid 1px;
+      background-color: $color_darkGreen;
+      color:white;
+      transition-duration: .4s;
     }
   }
 }
@@ -291,6 +299,9 @@
       padding-right: 0;
       padding-top: 0;
     }
+    &__fig::after{
+      content:'';
+    }
     &__regroup{
       padding: 0 3em 2em 3em;
       margin: 0;
@@ -325,7 +336,7 @@
 
     &__articles{
       max-width: 100%;
-      flex-direction: column;
+      flex-wrap: wrap;
       justify-content: space-around;
     }
     &__title{
@@ -335,7 +346,6 @@
     }
     .project{
       align-self: center;
-      width: 400px;
       &__link{
         width: 50%;
       }
@@ -412,6 +422,9 @@
     .projectsIndex{
       &__regroup{
         width: 100%;
+        a{
+          align-self: center;
+        }
       }
     }
     .presentation{

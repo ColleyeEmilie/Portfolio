@@ -13,6 +13,10 @@
     position: relative;
     top: -75px;
   }
+  &__fig:hover{
+    filter: brightness(0.5);
+    transition: .3s ease-in-out;
+  }
   &__title {
     margin-bottom: em(22);
     font-size: em(52);
@@ -23,7 +27,13 @@
       font-weight: bolder;
     }
   }
+  &__link:hover{
+    background-color: white;
+    color:$color_darkGreen;
+    transition-duration: .4s;
+  }
   &__link{
+    border: $color_darkGreen solid 1px;
     text-align: center;
     background-color: $color_darkGreen;
     max-width:170px;

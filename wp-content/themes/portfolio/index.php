@@ -47,7 +47,7 @@
         </section>
 
         <section class="page__presentation presentation">
-            <div class="presentation__background background"></div>
+            <div class="presentation__background background parallax2"></div>
             <div class="presentation__content">
                 <div class="presentation__regroup">
                     <h2 aria-level="2" class="presentation__title title bold"><?= get_field('presentation_titre')?> </h2>
@@ -55,7 +55,7 @@
                         <?= get_field('presentation_texte')?>
                     </div>
                 </div>
-                <figure class="presentation__fig">
+                <figure class="presentation__fig parallax">
                     <img src="<?= get_field('presentation_image')?>" alt="" class="presentation__img">
                 </figure>
             </div>

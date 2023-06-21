@@ -1,11 +1,17 @@
 
 <footer class="footer" aria-labelledby="footer">
-    <?php $isPage = is_front_page();?>
+    <?php $isPage = is_front_page();$isSingle = get_post_type(); $isContact = is_page_template( 'template-contact.php');?>
     <h2 class="footer__title hidden" id="footer" aria-level="2"><?= __('Pied de page', 'prt'); ?></h2>
 <div class="footer__all flex <?php if($isPage){
     echo "isGreen";
+}else if($isSingle === "project"){
+    echo "green";
+
+}else if($isContact){
+    echo "isWhite greenContact";
+
 }else{
-    echo "isWhite green";
+    echo "isWhite";
 
 };?>">
     <a href="<?= get_the_permalink(portfolio_get_template_page('template-legals')); ?>"

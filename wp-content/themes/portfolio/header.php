@@ -7,7 +7,7 @@
     <meta name="description" content="Portfolio de Emilie Colleye, développeuse web. Découvrez tous mes projets et apprenez-en plus sur moi. N'hésitez pas à me contacter. ">
     <title><?= get_the_title(); ?></title>
     <link rel="stylesheet" href="https://use.typekit.net/bcf2kyi.css">
-    <link rel="stylesheet" href="<?= get_stylesheet_directory_uri() . '/public/wp-content/themes/portfolio/public/css/site.css'; ?>" />
+    <link rel="stylesheet" href="<?= get_stylesheet_directory_uri() . '/public/css/site.css'; ?>" />
 </head>
 <body>
 <?php $isPage = is_page_template( 'template-projects.php'); $isSingle = get_post_type();?>
