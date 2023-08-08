@@ -58,7 +58,7 @@
   .projectsIndex{
     background-color: $color_darkGreen;
     min-height: 650px;
-    padding: 50px 220px 0;
+    padding: 70px 60px 0;
     &__regroup{
       display: flex;
       justify-content: space-between;
@@ -71,11 +71,13 @@
       font-size: em(36);
     }
     &__all{
+      font-weight: 400;
       text-transform: uppercase;
       align-self: center;
       letter-spacing: .15rem;
     }
     &__all::after{
+      transition: transform 0.3s ease;
       position: relative;
       top:7px;
       margin-left: em(20);
@@ -83,6 +85,9 @@
       width: 25px;
       height: 25px;
       content:url('../img/arrow-right.svg');
+    }
+    &__all:hover::after{
+      transform: translateX(3px);
     }
     &__articles{
       display: flex;
@@ -181,7 +186,6 @@
       min-height: 100%;
     }
   }
-
   .footer{
     background-color: $color_darkGreen;
     padding: 40px 65px;
@@ -213,6 +217,7 @@
     }
   }
 }
+
 @media screen and (max-width: 990px) {
   .page{
     .hero{
@@ -399,7 +404,6 @@
   }
 }
 }
-
 @media screen and (max-width: 479px){
   .page{
     .hero{
