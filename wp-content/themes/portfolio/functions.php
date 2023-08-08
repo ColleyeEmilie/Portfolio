@@ -1,13 +1,12 @@
 <?php
 
-use Portfolio\ContactForm;
-
+// Démarrer le système de sessions pour pouvoir afficher des messages de feedback venant des formulaires.
 if(session_status() === PHP_SESSION_NONE) session_start();
 
-
-// Disable Wordpress' default Gutenberg Editor:
+// Charger les fichiers des fonctionnalités extraites dans des classes.
 require_once(__DIR__ . '/controllers/ContactForm.php');
 
+// Disable Wordpress' default Gutenberg Editor:
 add_filter('use_block_editor_for_post', '__return_false', 10);
 
 // Activer les images "thumbnail" sur nos posts
@@ -89,18 +88,17 @@ function dwp_get_projets($count = 20){
     //2. on retourne l'objet WP_Query
     return $projects;
 }
-
 // Gérer le formulaire de contact "custom"
 // Inspiré de : https://wordpress.stackexchange.com/questions/319043/how-to-handle-a-custom-form-in-wordpress-to-submit-to-another-page
 
-function dwp_execute_contact_form()
+function portfolio_execute_contact_form(): void
 {
     $config = [
         'nonce_field' => 'contact_nonce',
-        'nonce_identifier' => 'dwp_contact_form',
+        'nonce_identifier' => 'portfolio_contact_form',
     ];
 
-    (new ContactForm($config, $_POST))
+    (new \Portfolio\ContactForm($config, $_POST))
         ->sanitize([
             'firstname' => 'text_field',
             'lastname' => 'text_field',
@@ -124,26 +122,26 @@ function dwp_execute_contact_form()
         ->feedback();
 }
 
-add_action('admin_post_nopriv_dwp_contact_form', 'dwp_execute_contact_form');
-add_action('admin_post_dwp_contact_form', 'dwp_execute_contact_form');
+add_action('admin_post_nopriv_portfolio_contact_form', 'portfolio_execute_contact_form');
+add_action('admin_post_portfolio_contact_form', 'portfolio_execute_contact_form');
 
 // Travailler avec la session de PHP
-function dwp_session_flash(string $key, mixed $value)
+function portfolio_session_flash(string $key, mixed $value): void
 {
-    if(! isset($_SESSION['dwp_flash'])) {
-        $_SESSION['dwp_flash'] = [];
+    if(! isset($_SESSION['portfolio_flash'])) {
+        $_SESSION['portfolio_flash'] = [];
     }
 
-    $_SESSION['dwp_flash'][$key] = $value;
+    $_SESSION['portfolio_flash'][$key] = $value;
 }
 
-function dwp_session_get(string $key)
+function portfolio_session_get(string $key)
 {
-    if(isset($_SESSION['dwp_flash']) && array_key_exists($key, $_SESSION['dwp_flash'])) {
+    if(isset($_SESSION['portfolio_flash']) && array_key_exists($key, $_SESSION['portfolio_flash'])) {
         // 1. Récupérer la donnée qui a été flash.
-        $value = $_SESSION['dwp_flash'][$key];
+        $value = $_SESSION['portfolio_flash'][$key];
         // 2. Supprimer la donnée de la session.
-        unset($_SESSION['dwp_flash'][$key]);
+        unset($_SESSION['portfolio_flash'][$key]);
         // 3. Retourner la donnée récupérée.
         return $value;
     }

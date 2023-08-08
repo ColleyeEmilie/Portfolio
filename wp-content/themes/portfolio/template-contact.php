@@ -25,12 +25,13 @@
                     </section>
                 </div>
             </section>
+
             <section aria-labelledby="contact" class="contact__content">
                 <h3 class="contact__title hidden" aria-level="3">Contactez-moi</h3>
                 <div class="page__form">
                     <?php
-                    $feedback = dwp_session_get('dwp_contact_form_feedback') ?? false;
-                    $errors = dwp_session_get('dwp_contact_form_errors') ?? [];
+                    $feedback = portfolio_session_get('portfolio_contact_form_feedback') ?? false;
+                    $errors = portfolio_session_get('portfolio_contact_form_errors') ?? [];
                     ?>
                     <?php if($feedback): ?>
                         <div class="success">
@@ -77,8 +78,8 @@
                                 </div>
                             </fieldset>
                             <div class="contact__footer">
-                                <input type="hidden" name="action" value="dwp_contact_form" />
-                                <input type="hidden" name="contact_nonce" value="<?= wp_create_nonce('dwp_contact_form'); ?>" />
+                                <input type="hidden" name="action" value="portfolio_contact_form" />
+                                <input type="hidden" name="contact_nonce" value="<?= wp_create_nonce('portfolio_contact_form'); ?>" />
                                 <button class="contact__submit" type="submit">Envoyer</button>
                             </div>
                         </form>
