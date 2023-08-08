@@ -1,13 +1,23 @@
-.logo{
+
+.logo__content{
   position: absolute;
   background-image: url("../img/logo.svg");
   background-size: cover;
   background-repeat: no-repeat;
-  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+.logo{
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  border-radius: 30px;
+  background-color: white;
+  position: absolute;
+  width: 55px;
+  height: 55px;
   top: 20px;
   left: 100px;
-  width: 30px;
-  height: 30px;
 }
 .header {
   .menu{
@@ -128,6 +138,7 @@
   }
   .header li a {
     padding: 20px 30px;
+    max-width: 50px;
   }
   .header .menu {
     clear: none;
@@ -139,6 +150,16 @@
   }
 }
 @media (max-width: 770px){
+  .menu__bg{
+    height: 60px;
+    width: 60px;
+    right: 17px;
+    top: 4px;
+    position: fixed;
+    background-color: white;
+    border-radius: 30px;
+
+  }
   .logo{
     display: none;
   }
@@ -154,7 +175,6 @@
   }
   .header{
     position: fixed;
-    background-color: rgba(255,255,255,0.3);
     z-index: 30;
   }
 }
