@@ -1,5 +1,7 @@
 <?php
 
+use Portfolio\ContactForm;
+
 if(session_status() === PHP_SESSION_NONE) session_start();
 
 
@@ -98,7 +100,7 @@ function dwp_execute_contact_form()
         'nonce_identifier' => 'dwp_contact_form',
     ];
 
-    (new \Portfolio\ContactForm($config, $_POST))
+    (new ContactForm($config, $_POST))
         ->sanitize([
             'firstname' => 'text_field',
             'lastname' => 'text_field',

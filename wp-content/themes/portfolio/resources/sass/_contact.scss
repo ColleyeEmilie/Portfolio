@@ -76,12 +76,18 @@
     display: flex;
     flex-direction: row-reverse;
     button{
+      border: $color_darkGreen solid 1px;
       min-width: 230px;
-      min-height: 30px;
+      min-height: 40px;
       background-color: $color_darkGreen;
-      border:none;
       color:white;
       cursor: pointer;
+      &:hover{
+        border: $color_darkGreen solid 1px;
+        background-color: white;
+        color:$color_darkGreen;
+        transition-duration: .4s;
+      }
     }
   }
 }
