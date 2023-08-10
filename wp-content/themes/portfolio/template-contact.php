@@ -34,15 +34,17 @@
                     $errors = hepl_session_get('hepl_contact_form_errors') ?? [];
                     ?>
 
-                    <?php if ($errors): ?>
-                        <div class="error">
-                            <p>Attention&nbsp;! Merci de corriger les erreurs du formulaire.</p>
-                        </div>
-                    <?php elseif ($feedback): ?>
-                <div class="success"">
-                <p>Merci&nbsp;! Votre message a bien été envoyé.</p>
-        </div>
-                    <?php endif; ?>
+                    <?php if ($feedback): ?>
+                    <div class="success"">
+                    <p>Merci&nbsp;! Votre message a bien été envoyé.</p>
+                </div>
+                <?php endif; ?>
+
+                <?php if ($errors): ?>
+                    <div class="error">
+                        <p>Attention&nbsp;! Merci de corriger les erreurs du formulaire.</p>
+                    </div>
+                <?php endif; ?>
 
                     <form action="<?= esc_url(admin_url('admin-post.php')); ?>" method="POST" class="contact__form">
                             <fieldset class="contact__info">
