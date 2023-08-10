@@ -25,6 +25,7 @@
                     </section>
                 </div>
             </section>
+
             <section aria-labelledby="contact" class="contact__content">
                 <h3 class="contact__title hidden" aria-level="3">Contactez-moi</h3>
                 <div class="page__form">
@@ -32,7 +33,6 @@
                     $feedback = hepl_session_get('hepl_contact_form_feedback') ?? false;
                     $errors = hepl_session_get('hepl_contact_form_errors') ?? [];
                     ?>
-
 
                     <?php if ($feedback): ?>
                     <div class="success"">
@@ -44,7 +44,7 @@
                     </div>
                     <?php endif; ?>
 
-                        <form action="<?= esc_url(admin_url('admin-post.php')); ?>" method="POST" class="contact__form">
+                    <form action="<?= esc_url(admin_url('admin-post.php')); ?>" method="POST" class="contact__form">
                             <fieldset class="contact__info">
                                 <div class="contact__name">
                                     <div class="contact__field">
