@@ -144,7 +144,6 @@ function hepl_session_flash(string $key, mixed $value)
     if(! isset($_SESSION['hepl_flash'])) {
         $_SESSION['hepl_flash'] = [];
     }
-
     $_SESSION['hepl_flash'][$key] = $value;
 }
 
@@ -154,11 +153,10 @@ function hepl_session_get(string $key)
         // 1. Récupérer la donnée qui a été flash.
         $value = $_SESSION['hepl_flash'][$key];
         // 2. Supprimer la donnée de la session.
-        unset($_SESSION['hepl_flash'][$key]);
+        unset($_SESSION['hepl_flash']);
         // 3. Retourner la donnée récupérée.
         return $value;
     }
-
     // La donnée n'existait pas dans la session flash, on retourne null.
     return null;
 }
