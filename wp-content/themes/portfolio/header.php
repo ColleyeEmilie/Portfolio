@@ -18,10 +18,12 @@
     <div class="menu__bg"></div>
     <input class="menu-btn" type="checkbox" id="menu-btn" />
     <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+
     <a href="https://emilie-colleye.com/" class="logo">
     <div class="logo__content">
     </div>
     </a>
+
     <ul class="menu">
         <?php foreach(dwp_get_menu('main') as $link): ?>
         <li>

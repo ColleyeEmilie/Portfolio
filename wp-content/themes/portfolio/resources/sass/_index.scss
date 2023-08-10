@@ -296,7 +296,6 @@
     padding: 3em 2em;
   }
   .hero{
-    max-height: 650px;
     &__content{
       flex-direction: column-reverse;
       padding-left: 0;
@@ -309,31 +308,20 @@
     &__regroup{
       padding: 0 3em 2em 3em;
       margin: 0;
-      position: relative;
-      top: -140px;
     }
+    &__fig, &__img{
+      max-width: 330px;
+      max-height: 430px;
+    }
+
     &__fig{
-      height: 500px;
-      max-height: inherit;
-      max-width: 100%;
+      margin: 10% auto;
       position: relative;
       z-index: -1;
     }
-    &__fig::before{
-      content: '';
-      z-index: 10;
-      width: 100%;
-      height: 100%;
-      display: block;
-      position: absolute;
-      background-color: rgba(255,255,255,0.6);
-    }
-    &__img{
-      min-width: 100vw;
-      height: 100%;
-    }
   }
   .projectsIndex{
+    min-height: inherit;
     display: flex;
     flex-direction: column;
     padding: em(50) 2em 4em 2em;
@@ -341,7 +329,6 @@
     &__articles{
       max-width: 100%;
       flex-wrap: wrap;
-      justify-content: space-around;
     }
     &__title{
       max-width: 350px;
@@ -365,6 +352,7 @@
     }
     &__regroup{
       margin-bottom: 3em;
+      flex-wrap: wrap;
     }
     &__all::after{
       width: 20px;
@@ -372,6 +360,9 @@
     }
   }
   .presentation{
+    &__fig, &__regroup{
+      align-self: flex-start;
+    }
     &__background{
       margin-top: em(-50);
       width: 60vw;
@@ -412,17 +403,20 @@
         justify-content: flex-end;
       }
       &__regroup{
-        padding: 0 1em 2em 1em;
+        padding: 0 2em 4em 2em;
+      }
+      &__presentation{
+        font-size: em(18);
       }
       &__title{
-        font-size: em(40);
+        font-size: em(28);
         margin-bottom: 1em;
-      }
-      &__fig{
-        margin-top: 0;
       }
     }
     .projectsIndex{
+      &__articles{
+        justify-content: center;
+      }
       &__regroup{
         width: 100%;
         a{

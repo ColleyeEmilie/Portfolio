@@ -1,36 +1,35 @@
-.layout__contact{
-  min-height: 100vh;
+
+.page__form{
+  .success{
+    padding-bottom: 2em;
+    color:green;
+  }
+  .error{
+    padding-bottom: 2em;
+    color:red;
+  }
+  .field__error{
+    color:red; padding-bottom: 1em;
+  }
 }
-.success{
-  padding-bottom: 2em;
-  color:green;
-}
-.error{
-  padding-bottom: 2em;
-  color:red;
-}
-.field__error{
-  color:red; padding-bottom: 1em;
-}
+
 #contact{
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
 }
 .contact {
-  &__content, &__title{
-    margin-left: 10%;
-  }
   margin: 0 auto;
   padding: em(100) 0 0 em(70);
   &__background{
-    min-height: 110vh;
+    position: fixed;
+    min-height: 100Vh;
     min-width: 30vw;
     right: 0;
   }
   .coordinates{
     margin-left: 2em;
-    padding: 6em 15% 6em 6em;
+    padding: 6em 8% 6em;
     background-color: $color_darkGreen;
     min-width: 320px;
     position: relative;
@@ -43,6 +42,7 @@
       margin-bottom: em(30);
     }
   }
+
   .coordinates, a:hover, a:visited, a{
     color:white;
   }
@@ -167,6 +167,7 @@
     }
   }
 }
+
 @media screen and (max-width: 769px) {
   .contact{
     .coordinates{
