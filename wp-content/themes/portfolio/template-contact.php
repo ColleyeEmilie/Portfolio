@@ -33,7 +33,9 @@
                     $errors = hepl_session_get('hepl_contact_form_errors') ?? [];
                     ?>
 
-                    <?php if($feedback): ?>
+                    <?php if(!$feedback && !$errors): ?>
+
+                    <?php elseif($feedback): ?>
                         <div class="success">
                             <p>Merci&nbsp;! Votre message a bien été envoyé.</p>
                         </div>
