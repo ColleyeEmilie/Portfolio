@@ -59,7 +59,6 @@ function portfolio_get_template_page(string $template): int|WP_Post|null
     ]);
     return $query->posts[0] ?? null;
 }
-
 // Enregistrer un custom post type :
 register_post_type('project', [
         'label' => 'Projets',
@@ -89,7 +88,6 @@ register_post_type('network',[
         'slug' => 'network',
     ],
 ]);
-
 function dwp_get_projets($count = 20){
     //1. on instancie l'objet WP_Query
     $projects = new WP_Query([
@@ -106,14 +104,14 @@ function dwp_get_projets($count = 20){
 // Gérer le formulaire de contact "custom"
 // Inspiré de : https://wordpress.stackexchange.com/questions/319043/how-to-handle-a-custom-form-in-wordpress-to-submit-to-another-page
 
-function portfolio_execute_contact_form()
+function hepl_execute_contact_form()
 {
     $config = [
         'nonce_field' => 'contact_nonce',
-        'nonce_identifier' => 'portfolio_contact_form',
+        'nonce_identifier' => 'hepl_contact_form',
     ];
 
-    (new \Portfolio\ContactForm($config, $_POST))
+    (new \Hepl\ContactForm($config, $_POST))
         ->sanitize([
             'firstname' => 'text_field',
             'lastname' => 'text_field',
@@ -137,26 +135,26 @@ function portfolio_execute_contact_form()
         ->feedback();
 }
 
-add_action('admin_post_nopriv_portfolio_contact_form', 'portfolio_execute_contact_form');
-add_action('admin_post_portfolio_contact_form', 'portfolio_execute_contact_form');
+add_action('admin_post_nopriv_hepl_contact_form', 'hepl_execute_contact_form');
+add_action('admin_post_hepl_contact_form', 'hepl_execute_contact_form');
 
 // Travailler avec la session de PHP
-function portfolio_session_flash(string $key, mixed $value)
+function hepl_session_flash(string $key, mixed $value)
 {
-    if(! isset($_SESSION['portfolio_flash'])) {
-        $_SESSION['portfolio_flash'] = [];
+    if(! isset($_SESSION['hepl_flash'])) {
+        $_SESSION['hepl_flash'] = [];
     }
 
-    $_SESSION['portfolio_flash'][$key] = $value;
+    $_SESSION['hepl_flash'][$key] = $value;
 }
 
-function portfolio_session_get(string $key)
+function hepl_session_get(string $key)
 {
-    if(isset($_SESSION['portfolio_flash']) && array_key_exists($key, $_SESSION['portfolio_flash'])) {
+    if(isset($_SESSION['hepl_flash']) && array_key_exists($key, $_SESSION['hepl_flash'])) {
         // 1. Récupérer la donnée qui a été flash.
-        $value = $_SESSION['portfolio_flash'][$key];
+        $value = $_SESSION['hepl_flash'][$key];
         // 2. Supprimer la donnée de la session.
-        unset($_SESSION['portfolio_flash'][$key]);
+        unset($_SESSION['hepl_flash'][$key]);
         // 3. Retourner la donnée récupérée.
         return $value;
     }

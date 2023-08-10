@@ -25,22 +25,19 @@
                     </section>
                 </div>
             </section>
-
             <section aria-labelledby="contact" class="contact__content">
                 <h3 class="contact__title hidden" aria-level="3">Contactez-moi</h3>
                 <div class="page__form">
                     <?php
-                    $feedback = portfolio_session_get('portfolio_contact_form_feedback') ?? false;
-                    $errors = portfolio_session_get('portfolio_contact_form_errors') ?? [];
+                    $feedback = hepl_session_get('hepl_contact_form_feedback') ?? false;
+                    $errors = hepl_session_get('hepl_contact_form_errors') ?? [];
                     ?>
 
                     <?php if($feedback): ?>
                         <div class="success">
                             <p>Merci&nbsp;! Votre message a bien été envoyé.</p>
                         </div>
-                    <?php endif; ?>
-
-                    <?php if($errors): ?>
+                    <?php elseif($errors): ?>
                             <div class="error">
                                 <p>Attention&nbsp;! Merci de corriger les erreurs du formulaire.</p>
                             </div>
@@ -52,6 +49,7 @@
                                     <div class="contact__field">
                                         <label for="firstname" class="field__label">Prénom</label>
                                         <input type="text" name="firstname" id="firstname" class="field__input" />
+
                                         <?php if($errors['firstname'] ?? null): ?>
                                             <p class="field__error"><?= $errors['firstname']; ?></p>
                                         <?php endif; ?>
@@ -80,8 +78,8 @@
                                 </div>
                             </fieldset>
                             <div class="contact__footer">
-                                <input type="hidden" name="action" value="portfolio_contact_form" />
-                                <input type="hidden" name="contact_nonce" value="<?= wp_create_nonce('portfolio_contact_form'); ?>" />
+                                <input type="hidden" name="action" value="hepl_contact_form" />
+                                <input type="hidden" name="contact_nonce" value="<?= wp_create_nonce('hepl_contact_form'); ?>" />
                                 <button class="contact__submit" type="submit">Envoyer</button>
                             </div>
                         </form>
