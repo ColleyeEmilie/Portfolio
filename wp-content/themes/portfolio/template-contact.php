@@ -34,7 +34,9 @@
                     ?>
 
                     <?php if(!$feedback && !$errors): ?>
-
+                        <div>
+                            <p>Test</p>
+                        </div>
                     <?php elseif($feedback): ?>
                         <div class="success">
                             <p>Merci&nbsp;! Votre message a bien été envoyé.</p>
