@@ -1,6 +1,17 @@
 .layout__contact{
   min-height: 100vh;
 }
+.success{
+  padding-bottom: 2em;
+  color:green;
+}
+.error{
+  padding-bottom: 2em;
+  color:red;
+}
+.field__error{
+  color:red; padding-bottom: 1em;
+}
 #contact{
   display: flex;
   flex-direction: row-reverse;

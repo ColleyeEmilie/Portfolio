@@ -33,16 +33,15 @@
                     $feedback = hepl_session_get('hepl_contact_form_feedback') ?? false;
                     $errors = hepl_session_get('hepl_contact_form_errors') ?? [];
                     ?>
-                    <?php if ($feedback): ?>
-                    <div class="success"">
-                    <p>Merci&nbsp;! Votre message a bien été envoyé.</p>
-                    </div>
+                    <?php if($feedback): ?>
+                        <div class="success">
+                            <p>Merci&nbsp;! Votre message a bien été envoyé.</p>
+                        </div>
                     <?php endif; ?>
-
-                    <?php if ($errors): ?>
-                    <div class="error">
-                        <p>Attention&nbsp;! Merci de corriger les erreurs du formulaire.</p>
-                    </div>
+                    <?php if($errors): ?>
+                            <div class="error">
+                                <p>Attention&nbsp;! Merci de corriger les erreurs du formulaire.</p>
+                            </div>
                     <?php endif; ?>
 
                         <form action="<?= esc_url(admin_url('admin-post.php')); ?>" method="POST" class="contact__form">
@@ -52,14 +51,14 @@
                                         <label for="firstname" class="field__label">Prénom</label>
                                         <input type="text" name="firstname" id="firstname" class="field__input" />
                                         <?php if($errors['firstname'] ?? null): ?>
-                                            <p class="field__error" style="color:red"><?= $errors['firstname']; ?></p>
+                                            <p class="field__error"><?= $errors['firstname']; ?></p>
                                         <?php endif; ?>
                                     </div>
                                     <div class="contact__field">
                                         <label for="lastname" class="field__label">Nom</label>
                                         <input type="text" name="lastname" id="lastname" class="field__input" />
                                         <?php if($errors['lastname'] ?? null): ?>
-                                            <p class="field__error" style="color:red"><?= $errors['lastname']; ?></p>
+                                            <p class="field__error"><?= $errors['lastname']; ?></p>
                                         <?php endif; ?>
                                     </div>
                                 </div>
@@ -67,14 +66,14 @@
                                     <label for="email" class="field__label">Email</label>
                                     <input type="email" name="email" id="email" class="field__input" />
                                     <?php if($errors['email'] ?? null): ?>
-                                        <p class="field__error" style="color:red"><?= $errors['email']; ?></p>
+                                        <p class="field__error" ><?= $errors['email']; ?></p>
                                     <?php endif; ?>
                                 </div>
                                 <div class="contact__field">
                                     <label for="message" class="field__label">Message</label>
                                     <textarea name="message" id="message" cols="30" rows="10" class="field__textarea"></textarea>
                                     <?php if($errors['message'] ?? null): ?>
-                                        <p class="field__error" style="color:red"><?= $errors['message']; ?></p>
+                                        <p class="field__error" ><?= $errors['message']; ?></p>
                                     <?php endif; ?>
                                 </div>
                             </fieldset>
@@ -84,7 +83,6 @@
                                 <button class="contact__submit" type="submit">Envoyer</button>
                             </div>
                         </form>
-                    <?php endif; ?>
                 </div>
             </section>
         </div>
