@@ -34,14 +34,14 @@
                     ?>
 
 
-                    <?php if ($feedback): ?>
-                    <div class="success"">
-                    <p>Merci&nbsp;! Votre message a bien été envoyé.</p>
-                    </div>
-                    <?php elseif ($errors): ?>
-                    <div class="error">
-                        <p>Attention&nbsp;! Merci de corriger les erreurs du formulaire.</p>
-                    </div>
+                    <?php if ($errors): ?>
+                        <div class="error">
+                            <p>Attention&nbsp;! Merci de corriger les erreurs du formulaire.</p>
+                        </div>
+                    <?php elseif ($feedback): ?>
+                <div class="success"">
+                <p>Merci&nbsp;! Votre message a bien été envoyé.</p>
+        </div>
                     <?php endif; ?>
 
                         <form action="<?= esc_url(admin_url('admin-post.php')); ?>" method="POST" class="contact__form">
