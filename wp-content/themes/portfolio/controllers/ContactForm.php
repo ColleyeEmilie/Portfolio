@@ -1,6 +1,6 @@
 <?php
 
-namespace Hepl;
+namespace Portfolio;
 
 class ContactForm
 {
@@ -41,7 +41,7 @@ class ContactForm
         }
 
         if($errors = $this->applyValidationRules($rules)) {
-            hepl_session_flash($this->config['nonce_identifier'] . '_errors', $errors);
+            portfolio_session_flash($this->config['nonce_identifier'] . '_errors', $errors);
             wp_safe_redirect($this->referrer);
             exit;
         }
@@ -92,6 +92,15 @@ class ContactForm
 
     protected function getRequiredErrorMessage(string $field): string
     {
+        switch ($field){
+            case 'lastname' :
+                $field = 'nom';
+                break;
+            case 'firstname' :
+                $field = 'prénom';
+                break;
+        }
+
         return 'Le champ ' . $field . ' est requis.';
     }
 
@@ -149,7 +158,7 @@ class ContactForm
      */
     public function feedback(): void
     {
-        hepl_session_flash($this->config['nonce_identifier'] . '_feedback', true);
+        portfolio_session_flash($this->config['nonce_identifier'] . '_feedback', true);
         wp_safe_redirect($this->referrer);
         exit;
     }
