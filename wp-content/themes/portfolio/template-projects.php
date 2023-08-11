@@ -4,7 +4,7 @@
 <main class="projects">
     <h2 aria-level="2" class="hidden">Tous mes projets</h2>
     <div class="projects__background"></div>
-    <div>
+    <div class="bigscreen">
         <h3  aria-level="3" class="projects__title title">Découvrez toutes mes <b>réalisations !</b></h3>
     </div>
     <div class="projects__wrapper">

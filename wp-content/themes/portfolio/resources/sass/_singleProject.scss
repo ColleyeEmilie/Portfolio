@@ -87,15 +87,11 @@
     align-self: center;
   }
   &__fig{
-    max-width: 200px;
-    max-height: 300px;
+    max-width: 250px;
+    max-height: 350px;
   }
-  &__fig:nth-child(1), &__fig:nth-child(2){
+  &__fig:nth-child(1){
     margin-right: 1em;
-  }
-  &__fig:nth-child(2){
-    margin-top: em(25);
-    z-index: 2;
   }
   &__img{
     width:  250px;
@@ -118,13 +114,7 @@
   }
   .projectsIndex{
     background-color: $color_darkGreen;
-    min-height: 100vh;
     padding: 50px 70px 0;
-    &__regroup{
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 10px;
-    }
     &__title, &__all{
       color:white;
     }
@@ -203,12 +193,16 @@
 }
 @media screen and (max-width: 990px) {
   .singleProject{
+    &__title{
+      margin-top: 1em;
+      margin-bottom: .5em;
+    }
     &__article{
       max-width: 700px;
     }
     &__presentation{
       &--2{
-        margin-top: 5em;
+        margin-top: 1em;
         width: 100%;
       }
     }
@@ -224,7 +218,6 @@
       align-items: center;
       flex-direction: column;
       margin-bottom: 4em;
-      align-items: center;
       &--fig{
         margin-bottom: 2em;
         max-width: 100%;
@@ -235,9 +228,6 @@
     }
     &__content{
       flex-direction: column-reverse;
-    }
-    &__fig{
-      max-width: 33%;
     }
     &__img{
       width:fit-content;
@@ -250,7 +240,6 @@
       align-self: center;
     }
     .projectsIndex {
-      min-height: 80vh;
       &__title{
         font-size: 2em;
       }

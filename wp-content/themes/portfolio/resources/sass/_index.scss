@@ -319,6 +319,9 @@
       position: relative;
       z-index: -1;
     }
+    &__background{
+      min-height: 150vh;
+    }
   }
   .projectsIndex{
     min-height: inherit;

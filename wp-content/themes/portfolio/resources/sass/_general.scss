@@ -1,3 +1,14 @@
+.bigscreen{
+  margin: 0 auto;
+  max-width: 1000px;
+}
+@media screen and (max-width: 990px){
+  .midscreen{
+    margin: 0 auto;
+    max-width: 650px;
+  }
+}
+
 body{
   font-family: "roboto", sans-serif;
   font-weight: normal;

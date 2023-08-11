@@ -6,14 +6,14 @@ $currentID = get_the_ID();?>
             <h2 aria-level="2" class="singleProject__title hidden">Mon projet <?= get_field('projet_nom')?> </h2>
             <div class="singleProject__background"></div>
             <section class="singleProject__article">
-                <h3 aria-level="3" class="singleProject__title title"><?= get_field('projet_nom')?> </h3>
-                <div class="singleProject__hero">
+                <h3 aria-level="3" class="singleProject__title midscreen title"><?= get_field('projet_nom')?> </h3>
+                <div class="singleProject__hero bigscreen">
                     <figure class="singleProject__hero--fig">
                         <?= get_the_post_thumbnail(null, 'index_thumbnail', ['class' => 'singleProject__hero--img']); ?>
                     </figure>
                     <p class="singleProject__presentation--1"><?= get_field('projet_presentation_1')?></p>
                 </div>
-                <div class="singleProject__content">
+                <div class="singleProject__content bigscreen">
                     <div class="singleProject__presentation">
                         <p class="singleProject__presentation--2"><?= get_field('projet_presentation_2')?></p>
                         <div class="singleProject__links">
@@ -35,17 +35,14 @@ $currentID = get_the_ID();?>
                         <figure class="singleProject__fig">
                             <img src="<?= get_field('projet_img_2')?>" alt="" class="singleProject__img">
                         </figure>
-                        <figure class="singleProject__fig">
-                            <img src="<?= get_field('projet_img_3')?>" alt="" class="singleProject__img">
-                        </figure>
                     </div>
                 </div>
             </section>
         </div>
         <section class="singleProject__projects projectsIndex">
-            <div class="projectsIndex__regroup">
+            <div class="projectsIndex__regroup midscreen">
                 <h2 aria-level="2" class="projectsIndex__title title bold">À voir aussi</h2></div>
-            <div class="projectsIndex__articles">
+            <div class="projectsIndex__articles bigscreen midscreen">
                 <?php
                 $projects = new WP_Query([
                     'post_type' => 'project',

@@ -130,11 +130,6 @@
       display: flex;
       margin-right: 0;
       justify-content: flex-end;
-      .projects{
-        &__regroup{
-          left: -160px;
-        }
-      }
     }
   }
 }
@@ -195,16 +190,18 @@
 }
 @media screen and (max-width: 480px){
   .projects{
-    padding: 6.25em 1em;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 6.25em;
     &__background{
-      margin:-6.25em -1em;
+      margin:-6.25em 0;
     }
     &__fig, &__img, &__fig::before, {
-      max-width: 350px;
-      min-width: 350px;
+      min-width: 100vw;
+      max-width: 100%;
     }
     &__regroup{
-      max-width: 320px;
+      max-width: 100%;
       padding: 2em 1em;
     }
   }

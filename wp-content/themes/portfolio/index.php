@@ -2,7 +2,7 @@
     <main class="page">
         <section class="page__hero hero">
             <div class="hero__background background"></div>
-            <div class="hero__content">
+            <div class="hero__content bigscreen">
                 <div class="hero__regroup">
                     <h2 aria-level="2" class="hero__title title"><?= get_field('hero_titre')?> </h2>
                     <div class="hero__presentation"><p class="hero__presentation"><?= get_field('hero_presentation')?></p>
@@ -15,11 +15,11 @@
         </section>
 
         <section class="page__projects projectsIndex">
-            <div class="projectsIndex__regroup">
+            <div class="projectsIndex__regroup bigscreen">
                 <h2 aria-level="2" class="projectsIndex__title title bold">Découvrez mes derniers projets </h2>
                 <a href="https://emilie-colleye.com/projets/"><p class="projectsIndex__all">Tous mes projets</p></a>
             </div>
-            <div class="projectsIndex__articles">
+            <div class="projectsIndex__articles bigscreen">
                 <?php
                 $projects = new WP_Query([
                     'post_type' => 'project',
@@ -49,7 +49,7 @@
 
         <section class="page__presentation presentation">
             <div class="presentation__background background parallax2"></div>
-            <div class="presentation__content">
+            <div class="presentation__content bigscreen">
                 <div class="presentation__regroup">
                     <h2 aria-level="2" class="presentation__title title bold"><?= get_field('presentation_titre')?> </h2>
                     <div class="presentation__text">
