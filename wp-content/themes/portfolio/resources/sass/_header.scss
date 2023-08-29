@@ -4,18 +4,18 @@
   background-image: url("../img/logo.svg");
   background-size: cover;
   background-repeat: no-repeat;
-  width: 40px;
-  height: 40px;
+  width: 90px;
+  height: 82px;
 }
 .logo{
   justify-content: center;
   display: flex;
   align-items: center;
-  border-radius: 30px;
-  background-color: rgba(255,255,255,0.5);
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255);
   position: absolute;
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   top: 20px;
   left: 100px;
 }
